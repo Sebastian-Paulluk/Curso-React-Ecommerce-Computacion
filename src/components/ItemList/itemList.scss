@@ -1,0 +1,14 @@
+@use '../../scss/variables';
+
+.item-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    
+    max-width: 1300px;
+    margin: auto;
+    margin-top: variables.$header-footer-margin;
+    margin-bottom: variables.$header-footer-margin;
+}

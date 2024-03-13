@@ -1,0 +1,13 @@
+@use '../../scss/variables';
+
+.item-list-container {
+  min-height: 
+    calc(
+      100vh 
+      - variables.$header-height 
+      - variables.$footer-height
+      - variables.$header-footer-margin
+    )
+  ;
+}
+
