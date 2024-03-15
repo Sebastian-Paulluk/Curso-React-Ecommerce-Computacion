@@ -12,6 +12,10 @@ body {
     font-family: variables.$font;
 }
 
+a:visited {
+    color: variables.$textColor;
+}
+
 li {
     list-style: none;
 }
