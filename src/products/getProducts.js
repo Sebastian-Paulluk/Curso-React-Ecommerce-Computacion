@@ -8,6 +8,15 @@ const getProducts =()=> {
     )
 }
 
+const getCategories =()=> {
+    return new Promise ((resolve) =>{
+        setTimeout(()=>{
+            const categories = new Set(products.map(prod => prod.category))
+            resolve(Array.from(categories).sort())
+        }, 500)
+    })
+}
+
 const getProductById =(productId)=>{
     return new Promise ((resolve) =>{
         setTimeout(()=>{
@@ -24,4 +33,4 @@ const getProductByCategory =(category)=>{
     })
 }
 
-export {getProducts, getProductById, getProductByCategory};
+export {getProducts, getProductById, getProductByCategory, getCategories};

@@ -8,13 +8,14 @@ nav {
     height: 45px;
     background-color: variables.$color3;
     border-bottom: 1px solid variables.$color5;
+
    
     ul {
         display: flex;
         flex-direction: row;
         justify-self: center;
 
-        li {
+        .nav-link {
             height: 45px;
             display: flex;
             justify-content: center;
@@ -23,6 +24,10 @@ nav {
             border-bottom: 1px solid variables.$color5;
             transition: 0.2s background-color ease-in;
             cursor: pointer;
+            
+            &.active {
+
+            }
 
             &:hover {
                 background-color: variables.$color2;

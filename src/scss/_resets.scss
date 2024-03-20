@@ -10,6 +10,7 @@ body {
     background-color: white;
     color: variables.$textColor;
     font-family: variables.$font;
+    font-weight: 200;
 }
 
 a:visited {
@@ -27,7 +28,12 @@ a {
 input {
     border: none;
     font-family: variables.$font;
+    font-weight: 300;
     font-size: 15px;
+    
+    &:focus {
+        outline: none;
+    }
 }
 
 button {

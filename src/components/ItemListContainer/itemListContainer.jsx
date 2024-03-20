@@ -19,6 +19,7 @@ const ItemListContainer =()=>{
 
     return (
         <div className='item-list-container'>
+            <h2 className="category-title">{categoryId ? categoryId : "Todos los productos"}</h2>
             <ItemList products={products}/>
         </div>
     )

@@ -1,3 +1,4 @@
+import { ImageListItem } from '../ImageListItem/ImageListItem';
 import './ImageList.scss'
 
 const ImageList =({images, onClick})=>{
@@ -5,12 +6,13 @@ const ImageList =({images, onClick})=>{
     return (
         <div className="image-list">
             {images && images.length > 0 &&(
-                images.map((img, key) => {
+                images.map( img => {
                     return (
-                        <div className='image-list__image-list-item' onClick={()=>onClick(img)}>
-                            <img key={key} src={img}>
-                            </img>
-                        </div>
+                        <ImageListItem 
+                            key={img}
+                            image={img}
+                            onClick={onClick}
+                        />
                     )
                 })
             )}

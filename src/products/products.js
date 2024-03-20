@@ -2,7 +2,7 @@ export const products = [
     {
         id:'1',
         title: "Mouse Redragon Storm PRO M808-KS", 
-        description: "asdasd", 
+        description: "...", 
         images: [
             "https://i.ibb.co/G7KDssb/STORM-PRO-B-1.webp",
             "https://i.ibb.co/MpYrPzZ/STORM-PRO-B-2.webp",
@@ -12,12 +12,12 @@ export const products = [
         ],
         stock: 7,
         price: 20000, 
-        category: "Mouse"
+        category: "mouse"
     },
     {
         id:'2',
         title: "Mouse Redragon Impact 908", 
-        description: "mouse reasdasd", 
+        description: "...",
         images: [
             "https://i.ibb.co/4jX1Dz6/IMPACT-908-1.webp",
             "https://i.ibb.co/wLgrK3b/IMPACT-908-2.webp",
@@ -26,24 +26,24 @@ export const products = [
         ],   
         stock: 3, 
         price: 17000, 
-        category: "Mouse"
+        category: "mouse"
 
     },
     {
         id:'3',
         title: "Mouse Redragon Invader M719-RGB negro", 
-        description: "mouse reasdasd", 
+        description: "...",
         images: [
             "https://i.ibb.co/QCJZwNg/INVADER-M719-RGB-1.webp",
             "https://i.ibb.co/4fNDS8D/INVADER-M719-RGB-2.webp",
             "https://i.ibb.co/fqY1vTd/INVADER-M719-RGB-3.webp",
             "https://i.ibb.co/3p0R2qv/INVADER-M719-RGB-4.webp",
             "https://i.ibb.co/G7k2pXM/INVADER-M719-RGB-5.webp",
-            "https://i.ibb.co/c3tr0pZ/INVADER-M719-RGB-6.webp"
+            "https://i.ibb.co/c3tr0pZ/INVADER-M719-RGB-6.webp",
         ],   
         stock: 5, 
         price: 20000, 
-        category: "Mouse"
+        category: "mouse"
 
     },
     {
@@ -60,7 +60,7 @@ export const products = [
         ],  
         stock: 12, 
         price: 469000, 
-        category: "Monitores"
+        category: "monitores"
 
     }
 ]

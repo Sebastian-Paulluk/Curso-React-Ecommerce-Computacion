@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useMountingAnimation } from '../Hooks/useMountingAnimation';
 import { ImageList } from '../ImageList/ImageList';
 import { ItemCount } from '../ItemCount/ItemCount';
@@ -14,7 +14,7 @@ const ItemDetail =({id, title, description, stock, images, price})=> {
 
     return (
         <div className={`item-detail ${visibility ? '' : 'hidden'}`}>
-            <div className='item-detail__image-list'>
+            <div className='item-detail__image-list-container'>
                 <ImageList images={images} onClick={handleImageClick}/>
             </div>
             <div className='item-detail__img-container'>

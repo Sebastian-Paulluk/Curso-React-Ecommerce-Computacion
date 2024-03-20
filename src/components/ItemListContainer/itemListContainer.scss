@@ -1,13 +1,30 @@
 @use '../../scss/variables';
 
 .item-list-container {
+
+  padding-bottom: 50px;
+  
   min-height: 
     calc(
-      100vh 
-      - variables.$header-height 
-      - variables.$footer-height
-      - variables.$header-footer-margin
+        100vh 
+        - variables.$header-height 
+        - variables.$footer-height
     )
   ;
+
+  .category-title {
+    
+    font-weight: 400;
+    height: 80px;
+    max-width: 1300px;
+    margin: auto;
+
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 50px;
+    border-bottom: 1px solid variables.$color2;
+  }
 }
 

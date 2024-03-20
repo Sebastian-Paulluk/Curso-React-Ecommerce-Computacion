@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import { getProductById } from "../../products/getProducts"
 import './ItemDetailContainer.scss'
 import { ItemDetail } from "../ItemDetail/ItemDetail"
+import { ItemPath } from "../ItemPath/ItemPath"
 
 
 const ItemDetailContainer =()=> {
@@ -17,6 +18,7 @@ const ItemDetailContainer =()=> {
 
     return (
         <div className="item-detail-container">
+            {product && <ItemPath {...product} />}
             {product && <ItemDetail {...product}/>}
         </div>
     )
