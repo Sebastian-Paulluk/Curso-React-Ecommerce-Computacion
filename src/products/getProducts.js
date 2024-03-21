@@ -11,8 +11,21 @@ const getProducts =()=> {
 const getCategories =()=> {
     return new Promise ((resolve) =>{
         setTimeout(()=>{
-            const categories = new Set(products.map(prod => prod.category))
-            resolve(Array.from(categories).sort())
+            const categoriesSet = new Set(products.map ( prod => prod.category));
+            const categoriesArray = Array.from(categoriesSet);
+            
+            const categories = categoriesArray.map( category => {
+                const brands = products
+                    .filter(prod => prod.category === category)
+                    .map(prod => prod.brand);
+              
+                return {
+                    name: category,
+                    subcategories: Array.from(new Set(brands))
+                };
+            });
+
+            resolve(categories)
         }, 500)
     })
 }
@@ -33,4 +46,14 @@ const getProductByCategory =(category)=>{
     })
 }
 
-export {getProducts, getProductById, getProductByCategory, getCategories};
+const getProductByCategoryAndBrand =(category, brand)=>{
+    return new Promise ((resolve) =>{
+        setTimeout(()=>{
+            resolve(products.filter( prod => (
+                prod.category === category && prod.brand === brand
+            )))
+        }, 500)
+    })
+}
+
+export {getProducts, getProductById, getProductByCategory, getProductByCategoryAndBrand, getCategories};

@@ -1,0 +1,26 @@
+@use '../../../scss/variables';
+
+.dropdown-list {
+    position: absolute;
+    z-index: 999;
+    display: none;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 100%;
+
+    .subcategory {
+        height: 45px;
+        background-color: variables.$color3;
+        cursor: pointer;  
+        transition: 0.2s background-color ease-in;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-inline: 15px;
+    
+        &:hover {
+            background-color: variables.$color2;
+        }
+    }
+}

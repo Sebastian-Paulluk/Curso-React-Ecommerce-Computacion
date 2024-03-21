@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Header } from "../Header/header";
-import { ItemDetailContainer } from "../ItemDetailContainer/ItemDetailContainer";
-import { ItemListContainer } from "../ItemListContainer/itemListContainer";
+import { Header } from "../HeaderComponents/Header/header";
+import { ItemDetailContainer } from "../ItemDetailComponents/ItemDetailContainer/ItemDetailContainer";
+import { ItemListContainer } from "../ItemListComponents/ItemListContainer/itemListContainer";
 import './App.scss';
 import { Footer } from "../Footer/Footer";
 
@@ -13,6 +13,9 @@ function App() {
         <Routes>
           <Route path='/' element={<ItemListContainer />} />
           <Route path='/category/:categoryId' element={<ItemListContainer />} />
+          
+          <Route path='/category/:categoryId/:brand' element={<ItemListContainer />} />
+
           <Route path='/item/:itemId' element={<ItemDetailContainer />} />
           <Route path='*' element={<h1>404 NOT FOUND</h1>} />
         </Routes>

@@ -1,14 +1,41 @@
 import { Link } from "react-router-dom";
-import { getCategories } from "../../products/getProducts";
+import './ItemPath.scss';
 
-const ItemPath =({id, category, title})=>{
-    getCategories().then(resp => console.log(resp))
+const ItemPath =({id, title, brand, category})=>{
+
     return (
         <div className="item-path">
-            <Link to={`/category/${category}`}>
-                {category}
+            <Link to={`/`} className='path'>
+                Todos los productos &nbsp;
             </Link>
-            {' > ' + title}
+
+            {category &&
+                <>
+                    <span>&nbsp;{'>'}</span>
+                    <Link to={`/category/${category}`} className='path'>
+                        &nbsp; {category} &nbsp;
+                    </Link>
+                </>
+            }
+
+            {brand &&
+                <>
+                    <span>&nbsp;{'>'}</span>
+                    <Link to={`/category/${category}/${brand}`} className='path'>
+                        &nbsp; {brand} &nbsp;
+                    </Link>
+                </>
+            }
+
+            {title &&
+                <>
+                    <span>&nbsp;{'>'}</span>
+                    <Link to={`/item/${id}`} className="path">
+                        &nbsp; {title}
+                    </Link>
+                </>
+            }
+
         </div>
     )
 }

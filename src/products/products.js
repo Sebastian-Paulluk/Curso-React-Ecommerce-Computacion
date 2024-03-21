@@ -2,6 +2,7 @@ export const products = [
     {
         id:'1',
         title: "Mouse Redragon Storm PRO M808-KS", 
+        brand: "Redragon",
         description: "...", 
         images: [
             "https://i.ibb.co/G7KDssb/STORM-PRO-B-1.webp",
@@ -16,7 +17,8 @@ export const products = [
     },
     {
         id:'2',
-        title: "Mouse Redragon Impact 908", 
+        title: "Mouse Redragon Impact 908",
+        brand: "Redragoneeeee",
         description: "...",
         images: [
             "https://i.ibb.co/4jX1Dz6/IMPACT-908-1.webp",
@@ -32,6 +34,7 @@ export const products = [
     {
         id:'3',
         title: "Mouse Redragon Invader M719-RGB negro", 
+        brand: "Redragon",
         description: "...",
         images: [
             "https://i.ibb.co/QCJZwNg/INVADER-M719-RGB-1.webp",
@@ -49,6 +52,7 @@ export const products = [
     {
         id:'4',
         title: "Monitor LG UltraGear 27GP750", 
+        brand: "LG",
         description: "Monitor gamer LG UltraGear 27GP750 LCD 27' negro 100V/240V", 
         images: [
             "https://i.ibb.co/t3wBCYs/LG-Ultra-Gear-27-GP750-1.webp",
@@ -62,5 +66,5 @@ export const products = [
         price: 469000, 
         category: "monitores"
 
-    }
+    },
 ]

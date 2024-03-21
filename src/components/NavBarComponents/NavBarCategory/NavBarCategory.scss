@@ -1,0 +1,27 @@
+@use '../../../scss/variables';
+
+.category {
+    height: 45px;
+
+    display: inline-block;
+    position:relative;
+    border-bottom: 1px solid variables.$color5;
+    transition: 0.2s background-color ease-in;
+    cursor: pointer;
+
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding-inline: 15px;
+    }
+
+    &:hover {
+        background-color: variables.$color2;
+    }
+
+    &:hover .dropdown-list {
+        display: block;
+    }
+}

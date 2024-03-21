@@ -1,0 +1,12 @@
+@use '../../../scss/variables';
+
+.item-detail-container {
+    padding-bottom: 50px;
+    min-height: 
+        calc(
+            100vh 
+            - variables.$header-height 
+            - variables.$footer-height
+        )
+    ;
+}
