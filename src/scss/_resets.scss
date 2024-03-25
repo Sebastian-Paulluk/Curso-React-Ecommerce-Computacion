@@ -8,13 +8,13 @@
 
 body {
     background-color: white;
-    color: variables.$textColor;
+    color: variables.$textBrightColor;
     font-family: variables.$font;
     font-weight: 200;
 }
 
 a:visited {
-    color: variables.$textColor;
+    color: variables.$textBrightColor;
 }
 
 li {

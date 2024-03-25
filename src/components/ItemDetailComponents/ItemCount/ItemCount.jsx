@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { Button } from 'antd';
+import React from 'react';
 import './ItemCount.scss'
 
 const ItemCount =({stock, initialState})=>{
@@ -14,13 +16,14 @@ const ItemCount =({stock, initialState})=>{
 
     return (
         <div className="item-count">
+            <div className="available-stock">Stock: {stock} unidades</div>
             <div className="item-count__controls">
-                <button className="decrement-button" onClick={decrement}>-</button>
+                <Button type="default" className="decrement-button" onClick={decrement}>-</Button>
                 <span className="number-of-items">{quantity}</span>
-                <button className="increment-button" onClick={increment}>+</button>
+                <Button type="default" className="increment-button" onClick={increment}>+</Button>
             </div>
             <div className="item-count__add-to-cart-button-container">
-                <button className="add-to-cart-button">Agregar al carrito</button>
+                <Button type="primary" className="add-to-cart-button">Agregar al carrito</Button>
             </div>
         </div>
     )

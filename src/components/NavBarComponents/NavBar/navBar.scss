@@ -5,14 +5,21 @@ nav {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 45px;
-    background-color: variables.$color3;
+    background-color: variables.$color4;
     font-weight: 300;
-    border-bottom: 1px solid variables.$color5;
 
     ul {
         display: flex;
         flex-direction: row;
         justify-self: center;
+
+        .nav-item {
+            height: 100%;
+            font-family: variables.$font;
+            border-radius: 0;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            font-weight: 400;
+        }
     }
 }

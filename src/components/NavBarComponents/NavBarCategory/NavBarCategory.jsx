@@ -1,21 +1,44 @@
 import { NavLink } from "react-router-dom";
-import { NavBarSubcategory } from "../NavBarSubcategory/NavBarSubcategory";
 import './NavBarCategory.scss';
+import React from 'react';
+import { Button, Dropdown } from 'antd';
+import { DropdownListStyle } from "../PersonalizedStyles/DropdownListStyle";
+import { ButtonStyle } from "../PersonalizedStyles/ButtonStyle";
+import { TRUE } from "sass";
 
 const NavBarCategory =({category})=>{
+
+    const items = category.subcategories.flatMap((subcat, index) => ({
+        key: index,
+        label: (
+            <NavLink className={'nav-link'} to={`/category/${category.name}/${subcat}`} key={index}>
+                {subcat}
+            </NavLink>
+        ),
+    }));
+
     return (
-            <li className='category'>
-                <NavLink className={'nav-link'} to={`/category/${category.name}`}>
-                    <span>{(category.name)}</span>
-                </NavLink>
+        <li className='category'>
 
-            <ul className='dropdown-list'>
-                {category.subcategories.map((subcategory, index) => (
-                    <NavBarSubcategory key={index} category={category.name} subcategory={subcategory} />
-                ))}
-            </ul>
+            <DropdownListStyle>
+                <Dropdown 
+                    menu={{items,}}
+                    placement="bottom"
+                    className="dropwdown-list"
+                >
 
-            </li>
+                    <NavLink className={'nav-link'} to={`/category/${category.name}`}>
+
+                        <ButtonStyle>
+                            <Button className="nav-item">{category.name}</Button>
+                        </ButtonStyle>
+
+                    </NavLink>
+
+                </Dropdown>
+            </DropdownListStyle>
+            
+        </li>
     )
 }
 

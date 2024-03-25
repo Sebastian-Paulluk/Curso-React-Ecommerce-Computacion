@@ -22,8 +22,9 @@ const ItemDetail =({id, title, description, stock, images, price})=> {
             </div>
             <div className='item-detail__right-container'>
                 <div className='item-detail__right-container__info-container'>
-                    <div>{title}</div>
-                    <div>{description}</div>
+                    <div className='item-title'>{title}</div>
+                    <div className='item-description'>{description}</div>
+                    <div className='item-price'>$ {price.toLocaleString()}</div>
                 </div>
                 <div className='item-detail__right-container__count-container'>
                     <ItemCount initialState={1} stock={stock} />

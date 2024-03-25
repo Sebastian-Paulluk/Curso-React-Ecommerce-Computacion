@@ -1,6 +1,8 @@
 @use '../../scss/variables';
 
 .item-path {
+    font-size: 15px;
+    color: variables.$textDarkColor;
     font-weight: 300;
     height: 60px;
     max-width: 1300px;
@@ -9,9 +11,10 @@
     justify-content: flex-start;
     align-items: center;
     padding-left: 20px;
-    border-bottom: 1px solid variables.$color2;
+    border-bottom: 1px solid variables.$borderColor;
 
     .path {
+        color: variables.$textDarkColor;
 
         &:hover {
             color: blue;

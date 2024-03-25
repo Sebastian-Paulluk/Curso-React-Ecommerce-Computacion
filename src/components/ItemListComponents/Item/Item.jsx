@@ -11,7 +11,7 @@ const Item =({id, title, description, stock, images, price})=> {
                     <img src={images[0]} alt={title}></img>
                 </div>
                 <div className='item__title'>{title}</div>
-                <div className='item__price'>$ {price}</div>
+                <div className='item__price'>$ {price.toLocaleString()}</div>
             </div>
         </Link>
     )
