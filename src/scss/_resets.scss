@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: white;
+    background-color: variables.$backGroundColor;
     color: variables.$textBrightColor;
     font-family: variables.$font;
     font-weight: 200;

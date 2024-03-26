@@ -4,10 +4,13 @@ import { ItemList } from "../ItemList/ItemList";
 import './itemListContainer.scss'
 import { useParams } from "react-router-dom";
 import { ItemPath } from "../../ItemPath/ItemPath";
+import React from 'react';
+import { ConfigProvider, FloatButton, Spin } from 'antd';
 
 const ItemListContainer =()=>{
     const [products, setProducts] = useState([])
-
+    const [isLoading, setIsLoading] = useState(true)
+    
     const { categoryId, brand } = useParams()
 
 
@@ -28,6 +31,7 @@ const ItemListContainer =()=>{
 
         asyncFunc(categoryId, brand)
             .then(response => setProducts(response))
+            .then(setIsLoading(false))
             .catch(error => console.log(error))
     },[categoryId, brand])
 
@@ -35,6 +39,17 @@ const ItemListContainer =()=>{
         <div className='item-list-container'>
             <ItemPath category={categoryId} brand={brand}/>
             <ItemList products={products}/>
+
+            <ConfigProvider
+                theme={{
+                    token: {
+                        colorBgElevated: '#85b7e2',
+                    },
+                }}
+                >
+                    <FloatButton.BackTop />
+            </ConfigProvider>
+            
         </div>
     )
 }

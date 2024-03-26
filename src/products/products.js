@@ -104,5 +104,67 @@ export const products = [
         price: 140000, 
         category: "Monitores"
     },
+    {
+        id:'7',
+        title: "Mouse Logitech M170", 
+        brand: "Logitech",
+        description: "Mouse inalámbrico Logitech M170 negro.", 
+        images: [
+            "https://i.ibb.co/TKYZnhh/Logitech-M170-1.webp",
+            "https://i.ibb.co/qg7cJTC/Logitech-M170-2.webp",
+            "https://i.ibb.co/z4nf6Dh/Logitech-M170-3.webp",
+            "https://i.ibb.co/hFGxvc3/Logitech-M170-4.webp"
+        ],  
+        stock: 7, 
+        price: 18000, 
+        category: "Mouse"
+    },
+    {
+        id:'8',
+        title: "Mouse Logitech M280", 
+        brand: "Logitech",
+        description: "Mouse inalámbrico Logitech M280 negro.", 
+        images: [
+            "https://i.ibb.co/fHmqstG/Logitech-M280-1.webp",
+            "https://i.ibb.co/Vv1nKqn/Logitech-M280-2.webp",
+            "https://i.ibb.co/874STnr/Logitech-M280-3.webp",
+            "https://i.ibb.co/NmkS0y1/Logitech-M280-4.webp"
+        ],  
+        stock: 3, 
+        price: 21000, 
+        category: "Mouse"
+    },
+    {
+        id:'9',
+        title: "Mouse Logitech Pro Series G", 
+        brand: "Logitech",
+        description: "Mouse gamer Logitech Pro Series G negro.", 
+        images: [
+            "https://i.ibb.co/Phf03Jv/Logitech-Pro-Series-G-1.webp",
+            "https://i.ibb.co/0QTJYSQ/Logitech-Pro-Series-G-2.webp",
+            "https://i.ibb.co/GCZdp6K/Logitech-Pro-Series-G-3.webp",
+            "https://i.ibb.co/mN72GJy/Logitech-Pro-Series-G-4.webp",
+            "https://i.ibb.co/jGmLq0p/Logitech-Pro-Series-G-5.webp",
+            "https://i.ibb.co/6PqRcF4/Logitech-Pro-Series-G-6.webp"
+            ],
+        stock: 4, 
+        price: 45000, 
+        category: "Mouse"
+    },
+    {
+        id:'10',
+        title: "Mouse Logitech Serie Ergo Lift", 
+        brand: "Logitech",
+        description: "Mouse vertical inalámbrico Logitech Serie Ergo Lift grafito.", 
+        images: [
+            "https://i.ibb.co/LPPbfxp/Logitech-Serie-Ergo-Lift-1.webp",
+            "https://i.ibb.co/s9MZS43/Logitech-Serie-Ergo-Lift-2.webp",
+            "https://i.ibb.co/DksmrYT/Logitech-Serie-Ergo-Lift-3.webp"
+            ],
+        stock: 2, 
+        price: 110000, 
+        category: "Mouse"
+    },
+
 
 ]

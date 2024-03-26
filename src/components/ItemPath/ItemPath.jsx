@@ -1,42 +1,40 @@
 import { Link } from "react-router-dom";
+import React from 'react';
+import { Breadcrumb } from 'antd';
 import './ItemPath.scss';
 
 const ItemPath =({id, title, brand, category})=>{
 
     return (
-        <div className="item-path">
-            <Link to={`/`} className='path'>
-                Todos los productos &nbsp;
-            </Link>
+        <Breadcrumb separator=">" className="item-path">
+
+            <Breadcrumb.Item>
+                <Link to={`/`} className='path'>Todos los productos</Link>
+            </Breadcrumb.Item>
 
             {category &&
-                <>
-                    <span>&nbsp;{'>'}</span>
+                <Breadcrumb.Item>
                     <Link to={`/category/${category}`} className='path'>
-                        &nbsp; {category} &nbsp;
+                        {category}
                     </Link>
-                </>
+                </Breadcrumb.Item>
             }
 
             {brand &&
-                <>
-                    <span>&nbsp;{'>'}</span>
+                <Breadcrumb.Item>
                     <Link to={`/category/${category}/${brand}`} className='path'>
-                        &nbsp; {brand} &nbsp;
+                        {brand}
                     </Link>
-                </>
+                </Breadcrumb.Item>
             }
 
             {title &&
-                <>
-                    <span>&nbsp;{'>'}</span>
-                    <Link to={`/item/${id}`} className="path">
-                        &nbsp; {title}
-                    </Link>
-                </>
+                <Breadcrumb.Item>
+                    {title}
+                </Breadcrumb.Item>
             }
 
-        </div>
+        </Breadcrumb>
     )
 }
 

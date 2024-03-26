@@ -3,7 +3,9 @@
 .item-path {
     font-size: 15px;
     color: variables.$textDarkColor;
+    background-color: variables.$backGroundColor;
     font-weight: 300;
+    font-family: variables.$font;
     height: 60px;
     max-width: 1300px;
     margin: auto;
@@ -15,9 +17,5 @@
 
     .path {
         color: variables.$textDarkColor;
-
-        &:hover {
-            color: blue;
-        }
     }
 }
