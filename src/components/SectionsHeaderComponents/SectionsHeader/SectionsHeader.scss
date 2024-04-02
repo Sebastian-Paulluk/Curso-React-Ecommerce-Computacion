@@ -1,0 +1,19 @@
+@use '../../../scss/variables';
+
+.sections-header {
+    background-color: variables.$itemBackgroundColor;
+    border-bottom: 1px solid variables.$borderColor;
+
+    &__container {
+        font-size: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+        max-width: 1300px;
+        padding-inline: 20px;
+        color: variables.$textDarkColor;
+        margin: auto;
+    }
+
+}

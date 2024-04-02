@@ -1,8 +1,14 @@
 @use '../../../scss/variables';
 
 .item-list-container {
-
+  display: block;
   padding-bottom: 50px;
+  position: relative;
+  &.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
   min-height: 
     calc(
@@ -11,5 +17,45 @@
         - variables.$footer-height
     )
   ;
+
+
+
+  .no-match {
+    min-height: 
+        calc(
+            100vh 
+            - variables.$header-height 
+            - variables.$footer-height
+            - 110px
+        );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .no-match-warning{
+        color: variables.$textDarkColor;
+        font-size: 25px;
+        font-weight: 300;
+        margin-bottom: 150px;
+        word-wrap: break-word;
+        position: absolute;
+        max-width: 600px;
+        overflow: hidden;
+    }
+  } 
+
+  .noMatchWarning {
+    color: variables.$textDarkColor;
+    word-wrap: break-word;
+    font-size: 25px;
+    font-weight: 300;
+    position: absolute;
+    max-width: 600px;
+    overflow: hidden;
+    top: 25%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    margin-top: 50px;
+  }
 }
 

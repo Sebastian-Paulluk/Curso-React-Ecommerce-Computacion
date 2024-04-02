@@ -11,7 +11,7 @@ const NavBarCategory =({category})=>{
     const items = category.subcategories.flatMap((subcat, index) => ({
         key: index,
         label: (
-            <NavLink className={'nav-link'} to={`/category/${category.name}/${subcat}`} key={index}>
+            <NavLink className={'nav-link'} to={`/${category.name}/${subcat}`} key={index}>
                 {subcat}
             </NavLink>
         ),
@@ -27,7 +27,7 @@ const NavBarCategory =({category})=>{
                     className="dropwdown-list"
                 >
 
-                    <NavLink className={'nav-link'} to={`/category/${category.name}`}>
+                    <NavLink className={'nav-link'} to={`/${category.name}`}>
 
                         <ButtonStyle>
                             <Button className="nav-item">{category.name}</Button>

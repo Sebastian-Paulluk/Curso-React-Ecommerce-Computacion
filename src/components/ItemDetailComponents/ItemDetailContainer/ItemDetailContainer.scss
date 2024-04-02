@@ -2,6 +2,14 @@
 
 .item-detail-container {
     padding-bottom: 50px;
+    display: block;
+
+    &.loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     min-height: 
         calc(
             100vh 

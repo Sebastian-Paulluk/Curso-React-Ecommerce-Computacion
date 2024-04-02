@@ -11,7 +11,7 @@
     margin: auto;
     overflow: hidden;
     margin-top: 20px;
-
+    background-color: variables.$itemBackgroundColor;
     opacity: 1;
     transition: transform 0.2s ease-in, opacity 0.2s ease-in;
 

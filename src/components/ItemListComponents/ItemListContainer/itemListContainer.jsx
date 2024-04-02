@@ -1,55 +1,95 @@
-import { useEffect, useState } from "react";
-import { getProductByCategory, getProductByCategoryAndBrand, getProducts } from "../../../products/getProducts";
+import { createContext, useEffect, useState } from "react";
+import { getProductByCategory, getProductByCategoryAndBrand, getProductsByNameOrBrand, getProducts } from "../../../products/getProducts";
 import { ItemList } from "../ItemList/ItemList";
 import './itemListContainer.scss'
 import { useParams } from "react-router-dom";
-import { ItemPath } from "../../ItemPath/ItemPath";
 import React from 'react';
 import { ConfigProvider, FloatButton, Spin } from 'antd';
+import { SectionsHeader } from "../../SectionsHeaderComponents/SectionsHeader/SectionsHeader";
+import { sortProducts } from "../../../functions/sortProducts";
+
+export const ItemListContext = createContext();
 
 const ItemListContainer =()=>{
     const [products, setProducts] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-    
-    const { categoryId, brand } = useParams()
+    const { routeParam1, routeParam2 } = useParams()
 
+    let params = {
+        category: routeParam1,
+        brand: routeParam2,
+        search: routeParam1 === 'search' && routeParam2
+    }
 
-    useEffect(()=>{
-        // se se establece la funcion que filtrara a los productos.
-        // por defecto, será la funcion que nos trae a todos los productos.
+    useEffect(() => {
         let asyncFunc = getProducts
 
-        if (brand !== undefined) { 
-        // si se eligió una marca, se filtrará la base de datos
-        // por categoria y por marca.
-            asyncFunc = getProductByCategoryAndBrand 
-        } else if (categoryId !== undefined) {
-        // si se eligió una categoria pero no una marca, se filtrará
-        // a la base de datos de los productos solamente por categoria.
+        if (params.search !== false ) {
+            asyncFunc = getProductsByNameOrBrand
+        } else if (params.brand !== undefined) {
+            asyncFunc = getProductByCategoryAndBrand
+        } else if (params.category !== undefined) {
             asyncFunc = getProductByCategory
-        } 
+        }
 
-        asyncFunc(categoryId, brand)
-            .then(response => setProducts(response))
-            .then(setIsLoading(false))
+        asyncFunc(params)
+            .then(response => {
+                setProducts(response)
+                setIsLoading(false)
+            })
             .catch(error => console.log(error))
-    },[categoryId, brand])
+
+        return () => setIsLoading(true)
+    }, [routeParam1, routeParam2])
+
+
+    const handleOrderBy =(orderOption)=> {
+        const sortedProducts = sortProducts(products, orderOption);
+        setProducts(sortedProducts); 
+    }
 
     return (
-        <div className='item-list-container'>
-            <ItemPath category={categoryId} brand={brand}/>
-            <ItemList products={products}/>
+        <div className={`item-list-container ${isLoading ? 'loading' : ''}`}>
+                {
+                    isLoading ?
+                    <Spin size="large" /> : 
+                    <>
+                        <ItemListContext.Provider
+                            value={{
+                                category: params.category,
+                                brand: params.brand,
+                                search: params.search,
+                                handleOrderBy: handleOrderBy
+                            }}
+                        >
+                            <SectionsHeader 
+                                searchTitle={params.search && true}
+                                orderBy={params.search && products.length === 0 ? false : true }
+                            />
+                        </ItemListContext.Provider>
 
-            <ConfigProvider
-                theme={{
-                    token: {
-                        colorBgElevated: '#85b7e2',
-                    },
-                }}
-                >
-                    <FloatButton.BackTop />
-            </ConfigProvider>
-            
+                        {params.search && products.length === 0 ?
+                            <div className="no-match">
+                                <span className="no-match-warning">
+                                    No se encontraron productos que coincidan con la búsqueda ({params.search})
+                                </span>
+                            </div>
+                            :
+                            <ItemList products={products}/>
+                        }
+                        
+                        <ConfigProvider
+                            theme={{
+                                token: {
+                                    colorBgElevated: '#85b7e2',
+                                },
+                            }}
+                        >
+                            <FloatButton.BackTop />
+                        </ConfigProvider>
+                    </>
+                }
+     
         </div>
     )
 }

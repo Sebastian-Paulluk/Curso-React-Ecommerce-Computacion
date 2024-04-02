@@ -1,0 +1,13 @@
+@use '../../../scss/variables';
+
+.sorting-select {
+
+    * {
+        font-weight: 300;
+        font-family: variables.$font;
+    }
+
+    .order-by-text {
+        margin-right: 10px;
+    }
+}

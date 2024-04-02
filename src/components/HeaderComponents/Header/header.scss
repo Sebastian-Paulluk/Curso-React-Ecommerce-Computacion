@@ -5,21 +5,28 @@
     height: variables.$header-height;
     
     &__top {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+        display: grid;
+        grid-template-columns:repeat(3, 1fr);
         padding: 20px;
         height: 90px;
 
-        .logo {
-            width: 150px;
+
+        .logo-container {
+
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            .logo {
+                width: 150px;
+            }
         }
 
-
         .cart-widget {
-            width: 150px;
+
+
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: center;
 
             .cart-img {

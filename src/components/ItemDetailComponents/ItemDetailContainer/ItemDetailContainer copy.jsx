@@ -1,5 +1,4 @@
-
-import { createContext, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { getProductById } from "../../../products/getProducts"
 import './ItemDetailContainer.scss'
@@ -7,7 +6,6 @@ import { ItemDetail } from "../ItemDetail/ItemDetail"
 import { SectionsHeader } from "../../SectionsHeaderComponents/SectionsHeader/SectionsHeader"
 import { Spin } from "antd"
 
-export const ItemDetailContext = createContext();
 
 const ItemDetailContainer =()=> {
     const [product, setProduct] = useState(null)
@@ -16,8 +14,8 @@ const ItemDetailContainer =()=> {
 
     useEffect(()=> {
         getProductById(itemId)
-            .then(product => {
-                setProduct(product)
+            .then(response => {
+                setProduct(response)
                 setIsLoading(false)
             })
             .catch(error => console.error(error)) 
@@ -27,25 +25,14 @@ const ItemDetailContainer =()=> {
 
     return (
         <div className={`item-detail-container ${isLoading ? 'loading' : ''}`}>
-            {isLoading ? (
-                <Spin size="large"/>
-            ) : (
+            {isLoading ? 
+                <Spin size="large"/> :
                 <>
-                    {product && (
-                        <>
-                            <ItemDetailContext.Provider
-                                value={{
-                                    category: product.category,
-                                    brand: product.brand,
-                                    title: product.title
-                                }}>
-                                <SectionsHeader orderBy={false} />
-                            </ItemDetailContext.Provider>
-                            <ItemDetail product={product}/>
-                        </>
-                    )}
+                    {product && <SectionsHeader {...product} orderBy={false} />}
+                    {product && <ItemDetail {...product}/>}
                 </>
-            )}
+            }
+
         </div>
     )
 }

@@ -1,0 +1,18 @@
+@use '../../../scss/variables';
+
+.path {
+    font-weight: 300;
+    font-family: variables.$font;
+
+    font-size: 15px;
+    color: variables.$textDarkColor;
+    background-color: variables.$itemBackgroundColor;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .path-item {
+        color: variables.$textDarkColor;
+    }
+}

@@ -1,0 +1,60 @@
+@use '../../../scss/variables';
+
+.cart-container {
+    display: block;
+    padding-bottom: 50px;
+    position: relative;
+    font-weight: 300;
+    font-family: variables.$font;
+    font-size: 15px;
+    color: variables.$textDarkColor;
+    background-color: variables.$backGroundColor;
+    
+    min-height: 
+        calc(
+            100vh 
+            - variables.$header-height 
+            - variables.$footer-height
+            );
+
+    &.empty {
+        padding-bottom: 0;
+    }
+
+    .empty-cart {
+        min-height: 
+            calc(
+                100vh 
+                - variables.$header-height 
+                - variables.$footer-height
+                - 110px
+            );
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .empty-cart-warning{
+            color: variables.$textDarkColor;
+            font-size: 25px;
+            font-weight: 300;
+            margin-bottom: 190px;
+
+        }
+    }
+    &__title-container {
+        background-color: variables.$itemBackgroundColor;
+        border-bottom: 1px solid variables.$borderColor;
+
+        &__title{
+            font-size: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+            max-width: 1300px;
+            padding-inline: 20px;
+            color: variables.$textDarkColor;
+            margin: auto;
+        }
+    }
+}

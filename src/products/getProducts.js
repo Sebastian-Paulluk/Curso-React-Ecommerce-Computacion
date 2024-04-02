@@ -38,7 +38,7 @@ const getProductById =(productId)=>{
     })
 }
 
-const getProductByCategory =(category)=>{
+const getProductByCategory =({category})=>{
     return new Promise ((resolve) =>{
         setTimeout(()=>{
             resolve(products.filter( prod => prod.category === category))
@@ -46,7 +46,7 @@ const getProductByCategory =(category)=>{
     })
 }
 
-const getProductByCategoryAndBrand =(category, brand)=>{
+const getProductByCategoryAndBrand =({category, brand})=>{
     return new Promise ((resolve) =>{
         setTimeout(()=>{
             resolve(products.filter( prod => (
@@ -56,4 +56,26 @@ const getProductByCategoryAndBrand =(category, brand)=>{
     })
 }
 
-export {getProducts, getProductById, getProductByCategory, getProductByCategoryAndBrand, getCategories};
+const getProductsByNameOrBrand =({search})=>{
+    return new Promise ((resolve) =>{
+        setTimeout(()=>{
+            const escapedText = search.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const regex = new RegExp('.*' + escapedText + '.*', 'i');
+
+            const filteredProducts = products.filter( prod => (
+                regex.test(prod.title) || regex.test(prod.brand)
+            ))
+
+            resolve(filteredProducts)
+        }, 500)
+    })
+}
+
+export {
+        getProducts,
+        getProductById, 
+        getProductByCategory, 
+        getProductByCategoryAndBrand, 
+        getProductsByNameOrBrand, 
+        getCategories
+};

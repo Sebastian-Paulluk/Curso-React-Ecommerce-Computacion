@@ -5,9 +5,12 @@ const useMountingAnimation =(delayTime=0)=>{
 
     useEffect (()=>{
         const timerId = setTimeout(()=>{
-            setVisibility(true);
-        }, delayTime * 1000);
-        return () => clearTimeout(timerId);
+            setVisibility(true)
+        }, delayTime * 1000)
+        return () => {
+            setVisibility(false)
+            clearTimeout(timerId)
+        }
     }, []);
     
     return visibility;
