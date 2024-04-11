@@ -3,6 +3,7 @@ import cartImg from '../../../assets/images/cartImg.png'
 import { Badge } from 'antd';
 import { CartContext } from '../../../context/CartContext';
 import { Link } from 'react-router-dom';
+import './CartWidget.scss';
 
 const CartWidget =()=>{
     const {cart, emptyCart} = useContext(CartContext);

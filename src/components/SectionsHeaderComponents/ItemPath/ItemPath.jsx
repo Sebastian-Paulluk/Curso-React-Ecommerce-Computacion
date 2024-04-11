@@ -2,13 +2,12 @@ import { Link } from "react-router-dom";
 import React, { useContext } from 'react';
 import { Breadcrumb } from 'antd';
 import './ItemPath.scss';
-import { ItemDetailContext } from "../../ItemDetailComponents/ItemDetailContainer/ItemDetailContainer";
-import { ItemListContext } from "../../ItemListComponents/ItemListContainer/itemListContainer";
+import { PathContext } from "../../../context/PathContext";
 
 const ItemPath =()=>{   
-    const itemListContext = useContext(ItemListContext);
-    const itemDetailContext = useContext(ItemDetailContext);
-    const {category, brand, title} = itemListContext || itemDetailContext;
+    const {path: {
+        category, brand, title}
+    } = useContext(PathContext);
 
     const items = [
         {title:(
@@ -17,14 +16,14 @@ const ItemPath =()=>{
         },
         category && {
             title:(
-                <Link to={`/${category}`} className='path-item'>
+                <Link to={`/category/${category}`} className='path-item'>
                     {category}
                 </Link>
             )
         },
         brand && {
             title:(
-                <Link to={`/${category}/${brand}`} className='path-item'>
+                <Link to={`/category/${category}/brand/${brand}`} className='path-item'>
                     {brand}
                 </Link>
             )

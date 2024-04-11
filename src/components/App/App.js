@@ -6,23 +6,32 @@ import "./App.scss";
 import { Footer } from "../Footer/Footer";
 import { CartProvider } from "../../context/CartContext";
 import { CartContainer } from "../CartComponents/CartContainer/CartContainer";
-
+import { Checkout } from "../CheckoutComponents/Checkout/Checkout";
+import { PathProvider } from "../../context/PathContext";
+import { ConfigProvider, FloatButton, Spin } from 'antd';
 function App() {
   return (
     <div className="App">
         <CartProvider>
+        <PathProvider>
           <BrowserRouter>
             <Header />
             <Routes>
               <Route path="/" element={<ItemListContainer />} />
-              <Route path="/:routeParam1" element={<ItemListContainer />} />
-              <Route path="/:routeParam1/:routeParam2"element={<ItemListContainer />} />
+              <Route path="/category/:categoryId" element={<ItemListContainer />} />
+              <Route path="/category/:categoryId/brand/:brandId"element={<ItemListContainer />} />
+              <Route path="/search/:searchedText"element={<ItemListContainer />} />
               <Route path="/item/:itemId" element={<ItemDetailContainer />} />
               <Route path="/cart" element={<CartContainer />} />
+              <Route path="/checkout" element={<Checkout />} />
               <Route path="*" element={<h1>404 NOT FOUND</h1>} />
             </Routes>
+            <ConfigProvider theme={{token: {colorBgElevated: '#85b7e2'}}}>
+              <FloatButton.BackTop />
+            </ConfigProvider>
             <Footer />
           </BrowserRouter>
+        </PathProvider>
         </CartProvider>
     </div>
   );

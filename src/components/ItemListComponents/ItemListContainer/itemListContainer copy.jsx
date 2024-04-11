@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { getProductByCategory, getProductByCategoryAndBrand, getProducts } from "../../../products/getProducts";
+import { createContext, useContext, useEffect, useState } from "react";
+import { getProductByCategoryAndBrand, getProductsByNameOrBrand } from "../../../products/getProducts";
 import { ItemList } from "../ItemList/ItemList";
 import './itemListContainer.scss'
 import { useParams } from "react-router-dom";
@@ -7,32 +7,46 @@ import React from 'react';
 import { ConfigProvider, FloatButton, Spin } from 'antd';
 import { SectionsHeader } from "../../SectionsHeaderComponents/SectionsHeader/SectionsHeader";
 import { sortProducts } from "../../../functions/sortProducts";
+import { getProducts, getProductByCategory } from "../../../services/firebase";
+import { PathContext } from "../../../context/PathContext";
+
+export const ItemListContext = createContext();
 
 const ItemListContainer =()=>{
     const [products, setProducts] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    const { routeParam1, routeParam2 } = useParams()
+    const {changePathCategory, changePathBrand} = useContext(PathContext)
 
-    const { categoryId, brand } = useParams()
-
+    let params = {
+        category: routeParam1,
+        brand: routeParam2,
+        search: routeParam1 === 'search' && routeParam2
+    }
 
     useEffect(() => {
         let asyncFunc = getProducts
 
-        if (brand !== undefined) {
+        if (params.search !== false ) {
+            asyncFunc = getProductsByNameOrBrand
+        } else if (params.brand !== undefined) {
             asyncFunc = getProductByCategoryAndBrand
-        } else if (categoryId !== undefined) {
+        } else if (params.category !== undefined) {
             asyncFunc = getProductByCategory
         }
 
-        asyncFunc(categoryId, brand)
+        asyncFunc(params)
             .then(response => {
                 setProducts(response)
                 setIsLoading(false)
+                changePathCategory(params.category)
+                changePathBrand(params.brand)
+                change
             })
             .catch(error => console.log(error))
 
         return () => setIsLoading(true)
-    }, [categoryId, brand])
+    }, [routeParam1, routeParam2])
 
 
     const handleOrderBy =(orderOption)=> {
@@ -47,8 +61,30 @@ const ItemListContainer =()=>{
                     isLoading ?
                     <Spin size="large" /> : 
                     <>
-                        <SectionsHeader category={categoryId} brand={brand} onClick={handleOrderBy}/>
-                        <ItemList products={products}/>
+                        <ItemListContext.Provider
+                            value={{
+                                category: params.category,
+                                brand: params.brand,
+                                search: params.search,
+                                handleOrderBy: handleOrderBy
+                            }}
+                        >
+                            <SectionsHeader 
+                                searchTitle={params.search && true}
+                                orderBy={params.search && products.length === 0 ? false : true }
+                            />
+                        </ItemListContext.Provider>
+
+                        {params.search && products.length === 0 ?
+                            <div className="no-match">
+                                <span className="no-match-warning">
+                                    No se encontraron productos que coincidan con la búsqueda ({params.search})
+                                </span>
+                            </div>
+                            :
+                            <ItemList products={products}/>
+                        }
+                        
                         <ConfigProvider
                             theme={{
                                 token: {
@@ -60,6 +96,7 @@ const ItemListContainer =()=>{
                         </ConfigProvider>
                     </>
                 }
+     
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useMountingAnimation =(delayTime=0)=>{
+const useMountingAnimation =(delayTime=0.05)=>{
     const [visibility, setVisibility] = useState(false);
 
     useEffect (()=>{
@@ -11,7 +11,7 @@ const useMountingAnimation =(delayTime=0)=>{
             setVisibility(false)
             clearTimeout(timerId)
         }
-    }, []);
+    }, [delayTime]);
     
     return visibility;
 }

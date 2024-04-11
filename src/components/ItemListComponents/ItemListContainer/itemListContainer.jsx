@@ -1,5 +1,4 @@
-import { createContext, useEffect, useState } from "react";
-import { getProductByCategory, getProductByCategoryAndBrand, getProductsByNameOrBrand, getProducts } from "../../../products/getProducts";
+import { createContext, useContext, useEffect, useState } from "react";
 import { ItemList } from "../ItemList/ItemList";
 import './itemListContainer.scss'
 import { useParams } from "react-router-dom";
@@ -7,29 +6,35 @@ import React from 'react';
 import { ConfigProvider, FloatButton, Spin } from 'antd';
 import { SectionsHeader } from "../../SectionsHeaderComponents/SectionsHeader/SectionsHeader";
 import { sortProducts } from "../../../functions/sortProducts";
+import { getProducts, getProductByCategory, getProductsByTitleBrandOrDescription, getProductByCategoryAndBrand } from "../../../services/firebase";
+import { PathContext } from "../../../context/PathContext";
 
 export const ItemListContext = createContext();
 
 const ItemListContainer =()=>{
     const [products, setProducts] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-    const { routeParam1, routeParam2 } = useParams()
-
-    let params = {
-        category: routeParam1,
-        brand: routeParam2,
-        search: routeParam1 === 'search' && routeParam2
-    }
+    const {categoryId, brandId, searchedText} = useParams()
+    const {changePathCategory, changePathBrand, resetPath} = useContext(PathContext)
 
     useEffect(() => {
-        let asyncFunc = getProducts
+        resetPath();
 
-        if (params.search !== false ) {
-            asyncFunc = getProductsByNameOrBrand
-        } else if (params.brand !== undefined) {
+        let asyncFunc = getProducts
+        let params 
+
+        if (searchedText) {
+            asyncFunc = getProductsByTitleBrandOrDescription
+            params = searchedText
+        } else if (brandId) {
             asyncFunc = getProductByCategoryAndBrand
-        } else if (params.category !== undefined) {
+            params = {category: categoryId, brand: brandId};
+            changePathCategory(categoryId)
+            changePathBrand(brandId)
+        } else if (categoryId) {
             asyncFunc = getProductByCategory
+            params = categoryId
+            changePathCategory(categoryId)
         }
 
         asyncFunc(params)
@@ -40,7 +45,7 @@ const ItemListContainer =()=>{
             .catch(error => console.log(error))
 
         return () => setIsLoading(true)
-    }, [routeParam1, routeParam2])
+    }, [categoryId, brandId, searchedText])
 
 
     const handleOrderBy =(orderOption)=> {
@@ -54,39 +59,22 @@ const ItemListContainer =()=>{
                     isLoading ?
                     <Spin size="large" /> : 
                     <>
-                        <ItemListContext.Provider
-                            value={{
-                                category: params.category,
-                                brand: params.brand,
-                                search: params.search,
-                                handleOrderBy: handleOrderBy
-                            }}
-                        >
+                        <ItemListContext.Provider value={{handleOrderBy: handleOrderBy, searchedText: searchedText}}>
                             <SectionsHeader 
-                                searchTitle={params.search && true}
-                                orderBy={params.search && products.length === 0 ? false : true }
+                                searchTitle={searchedText && true}
+                                orderBy={searchedText && products.length === 0 ? false : true }
                             />
                         </ItemListContext.Provider>
 
-                        {params.search && products.length === 0 ?
+                        {searchedText && products.length === 0 ?
                             <div className="no-match">
                                 <span className="no-match-warning">
-                                    No se encontraron productos que coincidan con la búsqueda ({params.search})
+                                    No se encontraron productos que coincidan con la búsqueda ({searchedText})
                                 </span>
                             </div>
                             :
                             <ItemList products={products}/>
                         }
-                        
-                        <ConfigProvider
-                            theme={{
-                                token: {
-                                    colorBgElevated: '#85b7e2',
-                                },
-                            }}
-                        >
-                            <FloatButton.BackTop />
-                        </ConfigProvider>
                     </>
                 }
      

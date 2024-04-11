@@ -5,7 +5,7 @@ import { ItemListContext } from '../../ItemListComponents/ItemListContainer/item
 
 
 const SortingSelect =()=>{
-
+    
     const {handleOrderBy} = useContext(ItemListContext);
 
     const handleChange = (value) => {

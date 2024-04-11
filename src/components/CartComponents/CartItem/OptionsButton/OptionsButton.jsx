@@ -13,7 +13,7 @@ const OptionsButton =({product})=>{
       setIsModalOpen(true);
     };
 
-    const handleOk = (product) => {
+    const handleOk = () => {
       setIsModalOpen(false);
       removeProduct(product);
     };

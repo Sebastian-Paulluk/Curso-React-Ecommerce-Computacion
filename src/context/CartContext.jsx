@@ -1,4 +1,4 @@
-import { createContext, useDebugValue, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const CartContext = createContext();
 
@@ -22,7 +22,6 @@ export const CartProvider = ({children}) =>{
         }
     }
 
-
     const removeProduct =(productToRemove)=>{
         const productIndex = cart.findIndex(prodInCart => prodInCart.id === productToRemove.id);
         
@@ -35,9 +34,11 @@ export const CartProvider = ({children}) =>{
         setCart([]);
     }
 
-    useEffect(()=>{
-        console.log(cart)
-    },[cart])
+
+    const getTotalPrice =()=>{
+        const totalPrice = cart.reduce((acum, prod) => acum + prod.price, 0);
+        return totalPrice;
+    }
 
 
     return (
@@ -46,7 +47,8 @@ export const CartProvider = ({children}) =>{
             addProduct,
             removeProduct,
             emptyCart,
-            isCartEmpty
+            isCartEmpty,
+            getTotalPrice
         }}>
             {children}
         </CartContext.Provider>
