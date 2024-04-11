@@ -4,7 +4,7 @@ import React from 'react';
 import { NavBarBrand } from "../NavBarBrand/NavBarBrand";
 
 const NavBarCategory =({category})=>{
-    console.log(category.brands)
+
     return (
         <li className='navbar-category'>
             <NavLink className={'nav-link'} to={`category/${category.name}`}>
