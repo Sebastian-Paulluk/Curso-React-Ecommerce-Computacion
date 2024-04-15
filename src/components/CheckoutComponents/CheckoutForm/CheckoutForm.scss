@@ -1,0 +1,38 @@
+@use '../../../scss/variables';
+
+.checkout-form {
+    min-height: 
+        calc(
+            100vh 
+            - variables.$header-height 
+            - variables.$footer-height
+            - 61px
+        );
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
+    input {
+        padding: 10px;
+        padding-inline: 20px;
+        border: 1px solid variables.$borderColor;
+        border-radius: 5px;
+    }
+
+    button {
+        padding: 10px;
+        padding-inline: 20px;
+        background-color: #1677ff;
+        color: white;
+        border-radius: 7px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: #4096ff;
+        }
+    }
+}

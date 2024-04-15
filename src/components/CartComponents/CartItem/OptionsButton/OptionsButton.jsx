@@ -37,7 +37,7 @@ const OptionsButton =({product})=>{
 
     return (
         <>
-        <Dropdown menu={{items,}} trigger={['click']} arrow>
+        <Dropdown menu={{items,}} trigger={['click']}  placement="bottomRight">
             <img src={dots} className='cart-item__options-button'></img>
         </Dropdown>
         <Modal

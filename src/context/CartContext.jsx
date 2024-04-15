@@ -3,9 +3,6 @@ import { createContext, useEffect, useState } from "react";
 export const CartContext = createContext();
 
 export const CartProvider = ({children}) =>{
-
-
-
     const [cart, setCart] = useState([]);
 
     const isCartEmpty =()=> cart.length === 0;
@@ -34,12 +31,41 @@ export const CartProvider = ({children}) =>{
         setCart([]);
     }
 
-
     const getTotalPrice =()=>{
-        const totalPrice = cart.reduce((acum, prod) => acum + prod.price, 0);
+        const totalPrice = cart.reduce((acum, prod) => acum + (prod.price * prod.quantity), 0);
         return totalPrice;
     }
 
+    const productInCart =(product)=>{
+        return cart.some( item => item.id === product.id)
+    }
+
+    const quantityOfUnitsInCart =(product)=> {
+        const prodInCar = cart.find( prod => prod.id === product.id)
+        return prodInCar.quantity;
+    }
+
+    const incrementUnits =(product)=>{
+        const updatedCart = cart.map ( item =>{
+            if (item.id === product.id) {
+                return { ...item, quantity: item.quantity + 1}
+            }
+            return item;
+        })
+        setCart(updatedCart);
+    }
+
+    const decrementUnits =(product)=>{
+        const updatedCart = cart.map ( item =>{
+            if (item.id === product.id) {
+                return { ...item, quantity: item.quantity - 1}
+            }
+            return item;
+        })
+        setCart(updatedCart);
+    }
+
+    useEffect(()=>console.log(cart),[cart])
 
     return (
         <CartContext.Provider value={{
@@ -48,7 +74,11 @@ export const CartProvider = ({children}) =>{
             removeProduct,
             emptyCart,
             isCartEmpty,
-            getTotalPrice
+            getTotalPrice,
+            productInCart,
+            quantityOfUnitsInCart,
+            incrementUnits,
+            decrementUnits
         }}>
             {children}
         </CartContext.Provider>

@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import { CartContext } from "../../../context/CartContext"
 import { CartItem } from "../CartItem/CartItem"
 import { Button } from 'antd';
@@ -7,6 +7,11 @@ import { Link } from "react-router-dom";
 
 const Cart =()=>{
     const {cart, getTotalPrice} = useContext(CartContext)
+    const [totalPrice, setTotalPrice] = useState(getTotalPrice());
+
+    useEffect(()=>{
+        setTotalPrice(getTotalPrice());
+    },[cart])
 
     return (
         <div className="cart">
@@ -23,9 +28,15 @@ const Cart =()=>{
             })}
 
             <div className="cart__total-price-container">
-                <span className="total-price">Total: ${getTotalPrice().toLocaleString()}</span>
+                <span className="total-price">Total: $ {totalPrice.toLocaleString()}</span>
                 <Link to='/checkout'>
-                    <Button type="primary" className="pay-button">Continuar</Button>
+                    <Button
+                        type="primary"
+                        className="pay-button"
+                        style={{width:150, height:40}}
+                    >
+                        Continuar
+                    </Button>
                 </Link>
             </div>
         </div>

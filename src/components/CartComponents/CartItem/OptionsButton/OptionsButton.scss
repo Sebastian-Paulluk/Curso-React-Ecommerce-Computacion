@@ -1,9 +1,16 @@
 
 .cart-item__options-button{
-    width: 24px;
+    border-radius: 50%;
+    width: 26px;
     position: absolute;
-    top: 20px;
-    right: -8px;
+    padding: 3px;
+    top: 18px;
+    right: -9px;
     transform: translate(-50%, -50%);
     cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover{
+        background-color: rgb(230, 230, 230);
+    }
 }

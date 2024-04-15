@@ -1,16 +1,21 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useMountingAnimation } from '../../Hooks/useMountingAnimation';
 import { ImageList } from '../ImageList/ImageList';
 import { ItemCount } from '../ItemCount/ItemCount';
 import './ItemDetail.scss'
+import { CartContext } from '../../../context/CartContext';
+import { Link } from 'react-router-dom';
+import { Button } from 'antd';
 
 const ItemDetail =({product})=> {
     const [selectedImage, setSelectedImage] = useState(product.images[0]);
     const visibility = useMountingAnimation();
+    const {productInCart} = useContext(CartContext);
 
     const handleImageClick =(image)=>{
         setSelectedImage(image);
     }
+
 
     return (
         <div className={`item-detail ${visibility ? '' : 'hidden'}`}>
@@ -27,7 +32,19 @@ const ItemDetail =({product})=> {
                     <div className='item-price'>$ {product.price.toLocaleString()}</div>
                 </div>
                 <div className='item-detail__right-container__count-container'>
-                    <ItemCount product={product}/>
+                    {productInCart(product) ? 
+                        <>
+                            <span className='prod-in-cart-warning'>El producto ya se encuentra en el carrito.</span>
+                            <Link to="/cart">
+                                <Button type="default" style={{width:150}}  className='button'>Ver en carrito</Button>
+                            </Link>
+                            <Link to="/">
+                                <Button type="primary" style={{width:150}} className='button'>Seguir comprando</Button>
+                            </Link>
+                        </>
+                        :
+                        <ItemCount product={product}/>
+                    }
                 </div>
             </div>
         </div>

@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../../../context/CartContext";
 import { createBuyOrder } from "../../../services/firebase";
+import './CheckoutForm.scss';
 
 const CheckoutForm = () => {
     const { cart } = useContext(CartContext);
@@ -41,7 +42,7 @@ const CheckoutForm = () => {
     if (idOrder) return <div>{idOrder}</div>;
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="checkout-form">
             <input
                 type="text"
                 placeholder="Ingrese nombre"

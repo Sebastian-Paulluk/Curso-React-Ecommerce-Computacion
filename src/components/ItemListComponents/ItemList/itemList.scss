@@ -6,9 +6,11 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    
     padding-top: 20px;
-
     max-width: 1300px;
     margin: auto;
+
+    @media (max-width: 420px) {
+        padding-inline: 10px;
+    }
 }

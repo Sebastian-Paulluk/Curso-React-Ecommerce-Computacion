@@ -1,6 +1,8 @@
 import { useMountingAnimation } from '../../Hooks/useMountingAnimation';
 import './CartItem.scss';
 import { OptionsButton } from './OptionsButton/OptionsButton';
+import { CartContext } from '../../../context/CartContext';
+import { CartItemCount } from './CartItemCount/CartItemCount';
 
 
 const CartItem =({product, mountingDelay})=>{
@@ -13,7 +15,12 @@ const CartItem =({product, mountingDelay})=>{
             <div className='cart-item__title-container'>
                 <span className='title'>{title}</span>
             </div>
-            <OptionsButton product={product}/>
+            <CartItemCount product={product} />
+            <div className='cart-item__price'>
+                <span className='price'>$ {(product.price * product.quantity).toLocaleString()}</span>
+                <span className='subtotal'> Precio unitario: $ {product.price.toLocaleString()}</span>
+            </div>
+            <OptionsButton product={product} />
         </div>
     )
 };

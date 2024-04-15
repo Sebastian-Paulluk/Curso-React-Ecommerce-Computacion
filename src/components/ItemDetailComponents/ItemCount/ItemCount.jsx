@@ -6,6 +6,7 @@ import { CartContext } from "../../../context/CartContext";
 
 const ItemCount =({product})=>{
     const [quantity, setQuantity] = useState(1)
+
     const {addProduct} = useContext(CartContext)
 
     const increment =()=>{
@@ -13,7 +14,7 @@ const ItemCount =({product})=>{
     }
 
     const decrement =()=>{
-        quantity > 1 && setQuantity(quantity + -1)
+        quantity > 1 && setQuantity(quantity - 1)
     }
 
     const addToCart =product=>{

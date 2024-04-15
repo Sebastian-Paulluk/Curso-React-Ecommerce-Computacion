@@ -17,8 +17,8 @@ const NavBar =()=> {
         <nav>
             <ul>
                 <li>
-                    <NavLink key={'todos'} className={"nav-link"} to={'/'}>
-                        <button className='navbar-category-item'>Mostrar todos</button>
+                    <NavLink key={'home'} className={"nav-link"} to={'/'}>
+                        <button className='navbar-category-item'>Home</button>
                     </NavLink>
                 </li>
 

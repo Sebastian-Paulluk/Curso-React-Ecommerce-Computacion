@@ -1,0 +1,56 @@
+@use '../../../scss/variables';
+
+.check-out {
+    color:variables.$textDarkColor;
+
+    min-height: 
+    calc(
+        100vh 
+        - variables.$header-height 
+        - variables.$footer-height
+    )
+  ;
+
+  &__title-container {
+    background-color: variables.$itemBackgroundColor;
+    border-bottom: 1px solid variables.$borderColor;
+    width: 100%;
+    color: variables.$textDarkColor;
+
+    .title-content {
+        font-size: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+        max-width: 1300px;
+        padding-inline: 20px;
+        color: variables.$textDarkColor;
+        margin: auto;
+
+        &__title{
+            font-weight: 300;
+            font-size: 15px;
+            padding-inline: 20px;
+            color: variables.$textDarkColor;
+            transform: translateX(-5px);
+
+            .cart-link {
+                color: variables.$textDarkColor;
+                transition: background-color 0.2s ease;
+                padding-inline: 5px;
+                border-radius: 4px;
+
+                &:hover{
+                    background-color: rgb(240, 240, 240);
+                }
+            }
+
+            .separator{
+                padding-inline: 4px;
+                color:rgb(194, 194, 194);
+            }
+        }
+    }
+}
+}

@@ -1,9 +1,9 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { ItemList } from "../ItemList/ItemList";
 import './itemListContainer.scss'
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import React from 'react';
-import { ConfigProvider, FloatButton, Spin } from 'antd';
+import { Spin, Button } from 'antd';
 import { SectionsHeader } from "../../SectionsHeaderComponents/SectionsHeader/SectionsHeader";
 import { sortProducts } from "../../../functions/sortProducts";
 import { getProducts, getProductByCategory, getProductsByTitleBrandOrDescription, getProductByCategoryAndBrand } from "../../../services/firebase";
@@ -71,7 +71,17 @@ const ItemListContainer =()=>{
                                 <span className="no-match-warning">
                                     No se encontraron productos que coincidan con la búsqueda ({searchedText})
                                 </span>
+                                <Link to='/'>
+                                    <Button
+                                        type="primary"
+                                        className="return-to-home-button"
+                                        style={{width:150, height:40, fontSize:16}}
+                                    >
+                                        Ir al inicio
+                                    </Button>
+                                </Link>
                             </div>
+                            
                             :
                             <ItemList products={products}/>
                         }

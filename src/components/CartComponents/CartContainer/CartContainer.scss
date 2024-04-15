@@ -1,8 +1,9 @@
 @use '../../../scss/variables';
 
 .cart-container {
+
     display: block;
-    padding-bottom: 50px;
+
     position: relative;
     font-weight: 300;
     font-family: variables.$font;
@@ -17,9 +18,6 @@
             - variables.$footer-height
             );
 
-    &.empty {
-        padding-bottom: 0;
-    }
 
     .empty-cart {
         min-height: 
@@ -27,9 +25,11 @@
                 100vh 
                 - variables.$header-height 
                 - variables.$footer-height
-                - 110px
+                - 61px
             );
+
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
 
@@ -37,15 +37,16 @@
             color: variables.$textDarkColor;
             font-size: 25px;
             font-weight: 300;
-            margin-bottom: 190px;
-
+            margin-bottom: 30px;
         }
     }
+
     &__title-container {
         background-color: variables.$itemBackgroundColor;
         border-bottom: 1px solid variables.$borderColor;
+        width: 100%;
 
-        &__title{
+        .title-content {
             font-size: 15px;
             display: flex;
             justify-content: space-between;
@@ -55,6 +56,12 @@
             padding-inline: 20px;
             color: variables.$textDarkColor;
             margin: auto;
+
+            &__title{
+                font-size: 15px;
+                padding-inline: 20px;
+                color: variables.$textDarkColor;
+            }
         }
     }
 }

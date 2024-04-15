@@ -1,0 +1,30 @@
+@use '../../../../scss/variables';
+
+.cart-item-count {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: 20px;
+    border-right: 1px solid variables.$borderColor;
+    .container {
+        .on-cart{
+            margin-bottom: 5px;
+        }
+    
+        .item-count__controls{
+    
+            .number-of-items{
+                border: 1px solid rgb(224, 224, 224);
+                margin-inline: 5px;
+            }
+        }
+    
+        .available-stock{
+            color: rgb(148, 148, 148);
+            font-size: 13px;
+            margin-top: 5px;
+        }
+    }
+}

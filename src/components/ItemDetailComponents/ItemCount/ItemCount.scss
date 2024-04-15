@@ -9,14 +9,8 @@
     align-items: center;
     font-weight: 300;
     
-    &::before {
-        display: block;
-        content: "";
-        width: 80%;
-        border-top:1px solid variables.$borderColor;
-        position: absolute;
-        top: 0;
-    }
+
+    
     .available-stock {
         font-size: smaller;
         width: 150px;

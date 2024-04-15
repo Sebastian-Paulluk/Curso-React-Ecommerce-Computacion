@@ -11,7 +11,7 @@ const ItemList =({products})=> {
 
                 return <Item 
                     key={product.id}
-                    {...product} 
+                    product={product} 
                     mountingDelay={mountingDelay}    
                 /> 
             })}
