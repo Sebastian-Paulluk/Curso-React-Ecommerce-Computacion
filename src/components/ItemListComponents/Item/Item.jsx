@@ -8,7 +8,7 @@ import { CartContext } from '../../../context/CartContext';
 const Item =({product, mountingDelay})=> {
     const visibility = useMountingAnimation(mountingDelay);
     const {productInCart} = useContext(CartContext);
-    const {id, title, description, stock, images, price} = product;
+    const {id, title, images, price} = product;
 
     return (
         <Link to={`/item/${id}`} className='Option'>
