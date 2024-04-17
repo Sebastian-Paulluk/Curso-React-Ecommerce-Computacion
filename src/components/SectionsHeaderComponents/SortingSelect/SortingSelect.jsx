@@ -16,15 +16,15 @@ const SortingSelect =()=>{
         <div className='sorting-select'>
             <span className='order-by-text'>Ordenar por: </span>
             <Select
-                defaultValue="oldest"
+                defaultValue="default"
                 style={{
                 width: 140}}
                 onChange={handleChange}
 
                 options={[
                     {
-                        value: 'oldest',
-                        label: 'Antigüedad',
+                        value: 'default',
+                        label: '...',
                     },
                     {
                         value: 'cheapest',

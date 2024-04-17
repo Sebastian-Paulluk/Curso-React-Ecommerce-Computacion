@@ -11,7 +11,7 @@ const ItemPath =()=>{
 
     const items = [
         {title:(
-                <Link to={`/`} className='path-item'>Todos los productos</Link>
+                <Link to={`/`} className='path-item'>Home</Link>
             )
         },
         category && {

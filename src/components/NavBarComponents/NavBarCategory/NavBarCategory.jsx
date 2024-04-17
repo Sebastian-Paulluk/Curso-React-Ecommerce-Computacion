@@ -12,7 +12,6 @@ const NavBarCategory =({category})=>{
             </NavLink>
 
             <ul className="brands-list">
-                <div className="category-separator" />
                 {category.brands.map((brand,key) =>(
                     <NavBarBrand key={key} category={category} brand={brand} />
                 ))}

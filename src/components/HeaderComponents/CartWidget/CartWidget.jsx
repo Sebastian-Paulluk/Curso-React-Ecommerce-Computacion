@@ -5,12 +5,13 @@ import { CartContext } from '../../../context/CartContext';
 import { Link } from 'react-router-dom';
 import './CartWidget.scss';
 
+<link href="https://unpkg.com/boxicons@2.1.0/css/boxicons.min.css" rel="stylesheet"></link>
 const CartWidget =()=>{
-    const {cart, emptyCart} = useContext(CartContext);
-    const [count, setCount] = useState(cart.length);
+    const {totalQuantity, cart} = useContext(CartContext);
+    const [count, setCount] = useState(totalQuantity);
 
     useEffect(()=>{
-        setCount(cart.length)
+        setCount(totalQuantity)
     },[cart])
     
     return (

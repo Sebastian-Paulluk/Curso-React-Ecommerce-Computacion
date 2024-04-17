@@ -32,6 +32,14 @@
 
         }
 
+        .top-right-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding-left: 25px;
+            padding-top: 6px;
+        }
+
 
     }
 }

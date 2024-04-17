@@ -6,6 +6,8 @@ import './ItemDetail.scss'
 import { CartContext } from '../../../context/CartContext';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd';
+import { WishedItemButton } from '../WishedItemButton/WishedItemButton';
+import { WishlistContext } from '../../../context/WishlistContext';
 
 const ItemDetail =({product})=> {
     const [selectedImage, setSelectedImage] = useState(product.images[0]);
@@ -30,6 +32,7 @@ const ItemDetail =({product})=> {
                     <div className='item-title'>{product.title}</div>
                     <div className='item-description'>{product.description}</div>
                     <div className='item-price'>$ {product.price.toLocaleString()}</div>
+                    <WishedItemButton product={product} />
                 </div>
                 <div className='item-detail__right-container__count-container'>
                     {productInCart(product) ? 

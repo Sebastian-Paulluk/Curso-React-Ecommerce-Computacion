@@ -9,10 +9,13 @@ import { CartContainer } from "../CartComponents/CartContainer/CartContainer";
 import { Checkout } from "../CheckoutComponents/Checkout/Checkout";
 import { PathProvider } from "../../context/PathContext";
 import { ConfigProvider, FloatButton, Spin } from 'antd';
+import { WishlistProvider } from "../../context/WishlistContext";
+
 function App() {
   return (
     <div className="App">
         <CartProvider>
+        <WishlistProvider>
         <PathProvider>
           <BrowserRouter>
             <Header />
@@ -32,6 +35,7 @@ function App() {
             <Footer />
           </BrowserRouter>
         </PathProvider>
+        </WishlistProvider>
         </CartProvider>
     </div>
   );

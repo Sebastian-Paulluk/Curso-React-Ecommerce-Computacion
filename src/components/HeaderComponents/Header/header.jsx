@@ -4,6 +4,7 @@ import { CartWidget } from '../CartWidget/CartWidget';
 import { NavBar } from '../../NavBarComponents/NavBar/NavBar';
 import logo from '../../../assets/images/logo.png';
 import './header.scss';
+import { WishlistWidget } from '../WishlistComponents/WishlistWidget';
 
 
 const Header =()=>{
@@ -16,7 +17,10 @@ const Header =()=>{
                     </Link>
                 </div>
                 <SearchInput />
-                <CartWidget />
+                <div className='top-right-container'>
+                    <CartWidget />
+                    <WishlistWidget />
+                </div>
             </div>
             <NavBar />
         </div>

@@ -1,0 +1,52 @@
+@use '../../../../scss/variables';
+
+.wishlist-item{
+    position: relative;
+
+    &__img-container {
+        width: 80px;
+        height: 80px;
+        border-right: 1px solid variables.$borderColor;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        padding: 5px;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    &__title-section {
+        height: 100%;
+        width: 220px;
+        padding: 10px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &__item-delete-section {
+        width: 30px;
+        height: 100%;
+    }
+
+    .item-delete-button {
+        position: absolute;
+        width: 26px;
+        top: 4px;
+        right: 4px;
+        transition: background-color 0.2s ease;
+        padding: 5px;
+        border-radius: 50%;
+        cursor: pointer;
+    
+        &:hover {
+            background-color: #ebebeb;
+        }
+    }
+}
+

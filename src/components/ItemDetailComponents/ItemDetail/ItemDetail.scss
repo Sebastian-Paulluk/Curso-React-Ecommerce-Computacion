@@ -44,6 +44,7 @@
         display: grid;
         grid-template-rows: 65% 35%;
         max-width: 100%;
+        position: relative;
 
         &__info-container {
             display: flex;
@@ -84,7 +85,14 @@
                 border-top:1px solid variables.$borderColor;
                 position: absolute;
                 bottom: 0;
+            }
 
+            .item-wish-icon {
+                position: absolute;
+                top: 4px;
+                right: 4px;
+                width: 25px;
+                cursor: pointer;
             }
         }
 
