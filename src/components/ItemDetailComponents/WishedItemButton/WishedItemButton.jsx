@@ -8,7 +8,6 @@ export const WishedItemButton =({product})=> {
     const {wishlist, productInWishlist, toggleProductOnWishlist} = useContext(WishlistContext);
     const [wishState, setWishState] = useState(productInWishlist(product));
 
-    console.log(productInWishlist(product))
 
     useEffect(()=>{
         setWishState(productInWishlist(product));

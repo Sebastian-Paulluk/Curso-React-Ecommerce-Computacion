@@ -33,7 +33,6 @@ export const WishlistProvider = ({children}) =>{
 
         if (!productInWishlist(product)) {
             setWishlist([...wishlist, product])
-            console.log(wishlist)
         } else {
             const productIndex = wishlist.findIndex(prodInWishlist => prodInWishlist.id === product.id);
         

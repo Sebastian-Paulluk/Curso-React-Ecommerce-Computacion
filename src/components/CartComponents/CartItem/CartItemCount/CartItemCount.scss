@@ -1,23 +1,28 @@
 @use '../../../../scss/variables';
 
 .cart-item-count {
-    height: 100%;
+    height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
-    padding-right: 20px;
+    align-items: center;
+    padding-inline: 20px;
     border-right: 1px solid variables.$borderColor;
+
+    @media only screen and (max-width: 767px) {
+        padding-inline: 5px;
+    }
+
     .container {
         .on-cart{
             margin-bottom: 5px;
         }
     
         .item-count__controls{
-    
             .number-of-items{
                 border: 1px solid rgb(224, 224, 224);
                 margin-inline: 5px;
+
             }
         }
     

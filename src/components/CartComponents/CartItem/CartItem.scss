@@ -15,6 +15,11 @@
     transition: transform 0.2s ease-in, opacity 0.2s ease-in;
     overflow: hidden;
 
+    @media only screen and (max-width: 767px) {
+        width: 98%;
+        font-size: 13px;
+    }
+
     &.hidden {
         transform: translateY(-20px);
         opacity: 0;
@@ -38,11 +43,15 @@
     &__title-container {
         grid-column: span 2;
         width: 100%;
-        height: 100%;
+        height: 100px;
         padding: 15px;
         display: flex;
         justify-content: flex-start;
         text-align: left;
+
+        @media only screen and (max-width: 767px) {
+            padding: 10px;
+        }
     }
 
     &__price {
@@ -50,15 +59,24 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-
+        height: 100px;
 
         .price{
+            border: 1px solid red;
             font-size: 17px;
+            @media only screen and (max-width: 767px) {
+                font-size: 13px;
+            }
         }
 
         .subtotal{
             font-size: 13px;
             color: rgb(143, 143, 143);
+
+            border: 1px solid red;
+            @media only screen and (max-width: 767px) {
+                font-size: 11px;
+            }
         }
     }
 }

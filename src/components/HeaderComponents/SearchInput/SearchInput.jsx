@@ -47,6 +47,7 @@ const SearchInput =()=>{
                 placeholder='Buscar producto...'
                 onKeyDown={handleSearchInput}
                 onChange={handleInputChange}
+                name='search-product-input'
             >
             </input>
 

@@ -5,7 +5,7 @@
     border: 1px solid variables.$borderColor;
     border-radius: 10px;
     display: grid;
-    grid-template-columns: 12% 60% 28%;
+    grid-template-columns: 106px 60% 28%;
     max-width: 900px;
     height: 500px;
     margin: auto;
@@ -14,6 +14,15 @@
     background-color: variables.$itemBackgroundColor;
     opacity: 1;
     transition: transform 0.2s ease-in, opacity 0.2s ease-in;
+
+    @media only screen and (max-width: 920px) {
+        width: 95%;
+    }
+    
+    @media only screen and (max-width: 767px) {
+        grid-template-columns: 106px calc(100% - 106px);
+        height: auto;
+    }
 
     &.hidden {
         transform: translateY(-20px);
@@ -24,6 +33,10 @@
         overflow: auto;
         height: 500px; 
         scrollbar-color: variables.$borderColor transparent;
+
+        @media only screen and (max-width: 767px) {
+            height: 300px;
+        }
     }
 
     &__img-container {
@@ -32,6 +45,11 @@
         align-items: center;
         height: 500px;
         padding: 20px;
+        
+        @media only screen and (max-width: 767px) {
+            height: 300px;
+
+        }
 
         img{
             max-height: 100%;
@@ -45,6 +63,13 @@
         grid-template-rows: 65% 35%;
         max-width: 100%;
         position: relative;
+
+        @media only screen and (max-width: 767px) {
+            display: flex;
+            flex-direction: column;
+            grid-column: span 2;
+            border: 1px solid variables.$borderColor;
+        }
 
         &__info-container {
             display: flex;
@@ -67,6 +92,10 @@
                 text-align: start;
                 padding-top: 20px;
                 font-size: 15px;
+
+                @media only screen and (max-width: 767px) {
+                    padding-bottom: 15px;
+                }
             }
 
             .item-price {
@@ -76,6 +105,13 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+
+                @media only screen and (max-width: 767px) {
+                    border-bottom: 1px solid variables.$borderColor;
+                    margin-top: 0;
+                    padding-bottom: 10px;
+                    height: 50px;
+                }
             }
 
             &::after {
@@ -85,6 +121,10 @@
                 border-top:1px solid variables.$borderColor;
                 position: absolute;
                 bottom: 0;
+
+                @media only screen and (max-width: 767px) {
+                    display: none;
+                }
             }
 
             .item-wish-icon {
@@ -93,6 +133,15 @@
                 right: 4px;
                 width: 25px;
                 cursor: pointer;
+
+                @media only screen and (max-width: 920px) {
+                    right: 15px;
+                }
+
+                @media only screen and (max-width: 767px) {
+                    right: 4px;
+                    top: -298px
+                }
             }
         }
 
@@ -102,6 +151,10 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+
+            @media only screen and (max-width: 767px) {
+                height: 150px;
+            }
 
             .prod-in-cart-warning {
                 margin-bottom: 10px;

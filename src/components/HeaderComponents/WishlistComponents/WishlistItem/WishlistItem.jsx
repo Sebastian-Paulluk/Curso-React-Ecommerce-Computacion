@@ -5,6 +5,25 @@ import { useContext } from "react";
 import { WishlistContext } from "../../../../context/WishlistContext";
 import styled from 'styled-components';
 
+
+const StyledWishlistItemContainer  = styled.div`
+color: black;
+border: 1px solid #B6B6B6;
+border-radius: 6px;
+cursor: pointer;
+margin-bottom: 10px;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+height: 80px;
+overflow: hidden;
+transition: all 0.2s ease;
+
+&:hover {
+    box-shadow: 0px 0px 10px #B6B6B6;
+}
+`;
+
 export const WishlistItem =({product, handleClose})=>{
     const {removeProductFromWishlist} = useContext(WishlistContext)
 
@@ -12,23 +31,6 @@ export const WishlistItem =({product, handleClose})=>{
         removeProductFromWishlist(product);
     }
     
-    const StyledWishlistItemContainer  = styled.div`
-        color: black;
-        border: 1px solid #B6B6B6;
-        border-radius: 6px;
-        cursor: pointer;
-        margin-bottom: 10px;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        height: 80px;
-        overflow: hidden;
-        transition: all 0.2s ease;
-
-        &:hover {
-            box-shadow: 0px 0px 10px #B6B6B6;
-        }
-    `;
 
     return (
         <div className="wishlist-item">

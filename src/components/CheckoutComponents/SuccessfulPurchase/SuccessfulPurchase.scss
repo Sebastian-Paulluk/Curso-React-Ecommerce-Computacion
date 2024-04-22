@@ -1,0 +1,26 @@
+@use '../../../scss/variables';
+
+.successful-purchase-content{
+    font-weight: 300;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+
+    .first-line {
+        font-size: 25px;
+        font-weight: 400;
+        margin-bottom: 5px;
+    }
+
+    .second-line {
+        font-size: 21px;
+        font-weight: 400;
+        margin-bottom: 25px;
+    }
+
+    .return-to-home-button {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+}
