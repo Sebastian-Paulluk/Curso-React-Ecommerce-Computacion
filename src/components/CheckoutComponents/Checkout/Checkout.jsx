@@ -10,7 +10,7 @@ const Checkout =()=>{
                     <div className='title-content__title'>
                         <Link to="/cart" className="cart-link">Carrito</Link>
                         <span className="separator">&gt;</span>
-                        Checkout
+                        <span className="checkout-text">Checkout</span>
                     </div>
                 </div>
             </div>

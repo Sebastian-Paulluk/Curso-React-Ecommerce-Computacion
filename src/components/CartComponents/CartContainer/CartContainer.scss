@@ -1,16 +1,16 @@
 @use '../../../scss/variables';
 
 .cart-container {
-
     display: block;
-
     position: relative;
     font-weight: 300;
     font-family: variables.$font;
     font-size: 15px;
     color: variables.$textDarkColor;
     background-color: variables.$backGroundColor;
-    
+
+
+
     min-height: 
         calc(
             100vh 
@@ -61,6 +61,10 @@
                 font-size: 15px;
                 padding-inline: 20px;
                 color: variables.$textDarkColor;
+
+                @media only screen and (max-width: 480px) {
+                    font-size: 13px;
+                }
             }
         }
     }

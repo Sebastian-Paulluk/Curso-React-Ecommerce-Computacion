@@ -2,7 +2,6 @@
 
 .check-out {
     color:variables.$textDarkColor;
-
     min-height: 
     calc(
         100vh 
@@ -38,6 +37,10 @@
             color: variables.$textDarkColor;
             transform: translateX(-5px);
 
+            @media only screen and (max-width: 480px) {
+                font-size: 13px;
+            }
+
             .cart-link {
                 color: variables.$textDarkColor;
                 transition: background-color 0.2s ease;
@@ -52,6 +55,10 @@
             .separator{
                 padding-inline: 4px;
                 color:rgb(194, 194, 194);
+            }
+
+            .checkout-text {
+                padding-inline: 5px;
             }
         }
     }

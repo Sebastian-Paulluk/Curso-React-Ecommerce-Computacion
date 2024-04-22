@@ -8,12 +8,18 @@
     justify-content: center;
     width: 390px;
     min-height: 
+
     calc(
         100vh 
         - variables.$header-height 
         - variables.$footer-height
         - 61px
     );
+
+    @media only screen and (max-width: 480px) {
+        font-size: 13px;
+        width: 90%;
+    }
 
     .credit-card-logos{
         width: 100%;
@@ -36,6 +42,7 @@
         text-align: left;
         width: 100%;
         position: relative;
+
     }
 
     .expiration-date-and-code-container{
@@ -50,6 +57,10 @@
         border-radius: 5px;
         width: 100%;
         margin-bottom: 28px;
+
+        @media only screen and (max-width: 480px) {
+            font-size: 13px;
+        }
     }
 
     label {
@@ -65,6 +76,10 @@
         color: white;
         padding-inline: 15px;
         border-radius:5px;
+
+        @media only screen and (max-width: 480px) {
+            font-size: 11px;
+        }
 
         &::before {
             content: "";
@@ -89,6 +104,11 @@
         cursor: pointer;
         transition: background-color 0.2s ease;
         margin-bottom: 40px;
+
+        @media only screen and (max-width: 480px) {
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
 
         &:hover {
             background-color: #4096ff;

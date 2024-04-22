@@ -12,6 +12,10 @@
     justify-content: flex-start;
     align-items: center;
 
+    @media only screen and (max-width: 480px) {
+        font-size: 12.5px;
+    }
+
     .path-item {
         color: variables.$textDarkColor;
     }

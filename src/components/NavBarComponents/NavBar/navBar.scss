@@ -8,10 +8,15 @@ nav {
     background-color: variables.$color4;
     height: calc(variables.$header-height - 90px);
 
+    @media only screen and (max-width: 480px) {
+        align-items: flex-end;
+    }
+
     ul {
         display: flex;
         flex-direction: row;
         justify-self: center;
+
     }
 
     .navbar-category-item {
@@ -27,6 +32,11 @@ nav {
         cursor: pointer;
         transition: background-color 0.2s ease;
         font-size: 14px;
+
+        @media only screen and (max-width: 480px) {
+            font-size: 11.5px;
+            padding-inline: 10px;
+        }
         
         &:hover {
             background-color: variables.$color6;

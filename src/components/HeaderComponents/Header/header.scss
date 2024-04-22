@@ -6,15 +6,27 @@
     position: sticky;
     top: 0;
     z-index: 999;
-
     
     &__top {
+        border: 1px solid red;
         display: grid;
         max-width: 900px;
         margin: auto;
         grid-template-columns:20% 60% 20%;
-
         height: 90px;
+
+        @media only screen and (max-width: 767px) {
+
+        }
+
+        @media only screen and (max-width: 480px) {
+            grid-template-columns: 50% 50%;
+
+            &> div:nth-child(2) {
+                grid-column: span 2;
+                grid-row: 2; /* Esto hace que el segundo div ocupe dos columnas */
+            }
+        }
 
         .logo-container {
             display: flex;
@@ -24,23 +36,48 @@
             padding-right: 25px;
             max-width: 100%;
             max-height: 100%;
+            border: 1px solid red;
+
+            @media only screen and (max-width: 720px) {
+                padding-right: 0;
+                justify-content: center;
+            }
+
+            @media only screen and (max-width: 480px) {
+                height: 45px;
+                justify-content: flex-start;
+                padding-left: 15px;
+            }
 
             .logo {
                 width: 80px;
+                @media only screen and (max-width: 480px) {
+                    width: 38px;
+                }
             }
 
 
         }
 
         .top-right-container {
+            border: 1px solid red;
             display: flex;
             justify-content: flex-start;
             align-items: center;
             padding-left: 25px;
             padding-top: 6px;
+
+            @media only screen and (max-width: 720px) {
+                padding-left: 0;
+                justify-content: center;
+            }
+
+            @media only screen and (max-width: 480px) {
+                height: 45px;
+                justify-content: flex-end;
+                padding-right: 15px;
+            }
         }
-
-
     }
 }
 

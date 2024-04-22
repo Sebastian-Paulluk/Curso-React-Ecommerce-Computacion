@@ -47,6 +47,11 @@
         justify-content: center;
         align-items: flex-start;
         font-size: 14px;
+
+        @media only screen and (max-width: 430px) {
+            padding: 5px;
+            font-size: 12px;
+        }
     }
 
     .item__price {
@@ -54,7 +59,7 @@
         background-color: variables.$color4;
         display: flex;
         justify-content: center;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .in-cart-icon{
@@ -74,6 +79,11 @@
 
     @media only screen and (max-width: 767px) {
         max-width: 150px;
+        height: 300px;
+    }
+
+    @media only screen and (max-width: 480px) {
+        max-width: 120px;
         height: 300px;
     }
 }

@@ -17,7 +17,7 @@ const CartWidget =()=>{
     return (
         <div className='cart-widget'>
             <Link to='/cart'>
-                <Badge count={count}>
+                <Badge count={count} size="small" offset={[-3, 5]}>
                     <img src={cartImg} className='cart-img' alt="Cart"></img>
                 </Badge>
             </Link>

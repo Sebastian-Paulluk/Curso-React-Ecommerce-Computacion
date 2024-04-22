@@ -7,6 +7,11 @@
     position: relative;
     overflow: hidden;
     border:1px solid white;
+
+    @media only screen and (max-width: 480px) {
+        width: 90%;
+        height: 38px;
+    }
     
     .searchIcon {
         position:absolute;
@@ -18,7 +23,7 @@
 
     .search-product-input {
         width: 100%;
-        padding: 10px 40px 10px 25px;
+        padding: 7px 40px 7px 25px;
         transition: box-shadow 0.2s ease;
 
         &:focus {

@@ -4,6 +4,10 @@
     height: calc(variables.$header-height - 90px);
     position: relative;
 
+    @media only screen and (max-width: 480px) {
+        height: calc(variables.$header-height - 105px);
+    }
+
     .navbar-category-item {
         font-family: variables.$font;
         border-radius: 0;
@@ -17,6 +21,10 @@
         height: 100%;
         font-weight: 300;
         transition: background-color 0.2s ease;
+
+        @media only screen and (max-width: 480px) {
+            padding-inline: 10px;
+        }
 
         &:hover {
             background-color: variables.$color6;
