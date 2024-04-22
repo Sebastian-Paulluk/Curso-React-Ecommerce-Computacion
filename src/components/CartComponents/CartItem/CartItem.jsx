@@ -4,9 +4,8 @@ import { OptionsButton } from './OptionsButton/OptionsButton';
 import { CartContext } from '../../../context/CartContext';
 import { CartItemCount } from './CartItemCount/CartItemCount';
 
-
 const CartItem =({product, mountingDelay})=>{
-    const {title, images, brand, description, stock, price} = product;
+    const { title, images } = product;
     const visibility = useMountingAnimation(mountingDelay); 
 
     return (

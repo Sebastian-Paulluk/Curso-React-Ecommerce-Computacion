@@ -20,6 +20,10 @@
         font-size: 13px;
     }
 
+    @media only screen and (max-width: 430px) {
+        grid-template-columns: 100px 0fr 1fr;
+    }
+
     &.hidden {
         transform: translateY(-20px);
         opacity: 0;
@@ -33,6 +37,7 @@
         align-items: center;
         padding: 5px;
         border-right: 1px solid variables.$borderColor;
+        grid-row-end: span 2;
 
         img {
             max-width: 100%;
@@ -52,6 +57,11 @@
         @media only screen and (max-width: 767px) {
             padding: 10px;
         }
+
+        @media only screen and (max-width: 430px) {
+            height: 50px;
+            padding: 5px 25px 5px 5px;
+        }
     }
 
     &__price {
@@ -60,6 +70,13 @@
         align-items: center;
         justify-content: center;
         height: 100px;
+        
+
+        @media only screen and (max-width: 430px) {
+            height: 50px;
+            width: 100%;
+            border-top: 1px solid variables.$borderColor;
+        }
 
         .price{
             font-size: 17px;

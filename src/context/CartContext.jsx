@@ -65,6 +65,20 @@ export const CartProvider = ({children}) =>{
         setCart(updatedCart);
     }
 
+
+
+    const updateUnits =(product, newQuantity)=>{
+        const updatedCart = cart.map ( item =>{
+            if (item.id === product.id) {
+                return { ...item, quantity: newQuantity}
+            }
+            return item;
+        })
+        setCart(updatedCart);
+    }
+
+
+
     const totalQuantity =()=>{
         const totalQuantity = cart.reduce((acum, prod) => acum + prod.quantity, 0);
         return totalQuantity;
@@ -82,7 +96,8 @@ export const CartProvider = ({children}) =>{
             quantityOfUnitsInCart,
             totalQuantity,
             incrementUnits,
-            decrementUnits
+            decrementUnits,
+            updateUnits
         }}>
             {children}
         </CartContext.Provider>

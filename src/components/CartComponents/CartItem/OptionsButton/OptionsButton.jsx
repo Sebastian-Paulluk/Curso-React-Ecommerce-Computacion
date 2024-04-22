@@ -36,24 +36,24 @@ const OptionsButton =({product})=>{
     ];
 
     return (
-        <>
-        <Dropdown menu={{items,}} trigger={['click']}  placement="bottomRight">
-            <img src={dots} className='cart-item__options-button'></img>
-        </Dropdown>
-        <Modal
-            title="Eliminar producto del carrito?"
-            open={isModalOpen}
-            onOk={handleOk}
-            onCancel={handleCancel}
-            okText="Confirmar"
-            cancelText="Cancelar"
-            width={500}
-            centered={true}
-            closable={false}
-            className='discard-product-modal'
-        >
-        </Modal>
-        </>
+        <div className='cart-item__options-button'>
+          <Dropdown menu={{items,}} trigger={['click']}  placement="bottomRight" className='options-button'>
+              <img src={dots} ></img>
+          </Dropdown>
+          <Modal
+              title="Eliminar producto del carrito?"
+              open={isModalOpen}
+              onOk={handleOk}
+              onCancel={handleCancel}
+              okText="Confirmar"
+              cancelText="Cancelar"
+              width={500}
+              centered={true}
+              closable={false}
+              className='discard-product-modal'
+          >
+          </Modal>
+        </div>
     )
 }
 

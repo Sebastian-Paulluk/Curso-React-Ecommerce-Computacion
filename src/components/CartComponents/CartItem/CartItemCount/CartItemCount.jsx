@@ -1,30 +1,28 @@
 import { Button } from 'antd';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { CartContext } from '../../../../context/CartContext';
 import './CartItemCount.scss';
+import { getSelectItems } from './getSelectItems';
 
 export const CartItemCount =({product})=>{
-    const {quantityOfUnitsInCart, incrementUnits, decrementUnits} = useContext(CartContext);
+    const {quantityOfUnitsInCart, updateUnits} = useContext(CartContext);
+    const selectItems = getSelectItems(product);
+    const [selectedValue, setSelectedValue] = useState(quantityOfUnitsInCart(product));
 
-    const decrementUnitsInCart =()=>{
-        quantityOfUnitsInCart(product) > 1 && decrementUnits(product);
-    }
-    
-    const incrementUnitsInCart =()=>{
-        quantityOfUnitsInCart(product) < product.stock && incrementUnits(product);
+    const handleSelectChange = (event) => {
+        const newValue = parseInt(event.target.value);
+        setSelectedValue(newValue);
+        updateUnits(product, newValue);
     }
 
     return (
         <div className="cart-item-count">
-            <div className='container'>
-                <div className="on-cart">Unidades:</div>
-                <div className="item-count__controls">
-                    <Button type="default" className="cart-item-decrement-button" onClick={decrementUnitsInCart}>-</Button>
-                    <span className="number-of-items">{quantityOfUnitsInCart(product)}</span>
-                    <Button type="default" className="cart-item-increment-button" onClick={incrementUnitsInCart}>+</Button>
-                </div>
-                <div className="available-stock">Stock: {product.stock}</div>
-            </div>
+            Cantidad
+            <select defaultValue={selectedValue} onChange={handleSelectChange}>
+                {selectItems.map ( (item, key) => (
+                    <option key={key} value={item}>{item}</option>
+                ))}
+            </select>
         </div>
     )
 }

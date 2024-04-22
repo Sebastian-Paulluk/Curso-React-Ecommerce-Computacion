@@ -1,16 +1,24 @@
 
 .cart-item__options-button{
-    border-radius: 50%;
-    width: 26px;
-    position: absolute;
-    padding: 3px;
-    top: 18px;
-    right: -9px;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-    transition: background-color 0.2s ease;
 
-    &:hover{
-        background-color: rgb(230, 230, 230);
+    @media only screen and (max-width: 430px) {
+        height: 50px;
+        grid-row-end: span 2;
+    }
+    
+    .options-button {
+        border-radius: 50%;
+        width: 26px;
+        position: absolute;
+        padding: 3px;
+        top: 18px;
+        right: -9px;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    
+        &:hover{
+            background-color: rgb(230, 230, 230);
+        }
     }
 }
