@@ -17,7 +17,7 @@ const CartItem =({product, mountingDelay})=>{
             <CartItemCount product={product} />
             <div className='cart-item__price'>
                 <span className='price'>$ {(product.price * product.quantity).toLocaleString()}</span>
-                <span className='subtotal'> Precio unitario: $ {product.price.toLocaleString()}</span>
+                <span className='subtotal'> P. unitario: $ {product.price.toLocaleString()}</span>
             </div>
             <OptionsButton product={product} />
         </div>
