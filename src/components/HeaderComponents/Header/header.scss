@@ -8,7 +8,6 @@
     z-index: 999;
     
     &__top {
-        border: 1px solid red;
         display: grid;
         max-width: 900px;
         margin: auto;
@@ -36,7 +35,6 @@
             padding-right: 25px;
             max-width: 100%;
             max-height: 100%;
-            border: 1px solid red;
 
             @media only screen and (max-width: 720px) {
                 padding-right: 0;
@@ -60,7 +58,6 @@
         }
 
         .top-right-container {
-            border: 1px solid red;
             display: flex;
             justify-content: flex-start;
             align-items: center;

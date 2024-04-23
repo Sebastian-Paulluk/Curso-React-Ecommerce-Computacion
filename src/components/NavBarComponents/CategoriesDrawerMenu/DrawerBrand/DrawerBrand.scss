@@ -1,0 +1,16 @@
+@use '../../../../scss/variables';
+
+.drawer-brand-item{
+    width: 100%;
+    text-align: left;
+    padding: 10px 20px 10px 60px;
+    border-bottom: 1px solid variables.$borderColor;
+    font-family: variables.$font;
+    cursor: pointer;
+    background-color: rgb(230, 230, 230);
+    transition: all 0.2s ease;
+
+    &:hover{
+        background-color: white;
+    }
+}

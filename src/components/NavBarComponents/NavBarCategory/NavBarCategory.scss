@@ -4,6 +4,10 @@
     height: calc(variables.$header-height - 90px);
     position: relative;
 
+    @media only screen and (max-width: 767px) {
+        display: none;
+    }
+
     @media only screen and (max-width: 480px) {
         height: calc(variables.$header-height - 105px);
     }

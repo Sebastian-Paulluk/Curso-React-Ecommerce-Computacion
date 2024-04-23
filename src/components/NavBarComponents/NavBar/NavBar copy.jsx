@@ -4,20 +4,14 @@ import './navBar.scss'
 import { useEffect, useState } from 'react';
 import { NavBarCategory } from '../NavBarCategory/NavBarCategory';
 import { getCategories } from '../../../services/firebase';
-import { CategoriesDrawer } from '../CategoriesDrawerMenu/CategoriesDrawerMenu';
 
 const NavBar =()=> {
     const [categories, setCagories] = useState([]);
-    const [drawerVisible, setDrawerVisible] = useState(false);
 
     useEffect(()=>{
         getCategories()
             .then(response => setCagories(response))
     }, [])
-
-    const handleCategoriesDrawerClick =()=>{
-        setDrawerVisible(true);
-    }
 
     return(
         <nav>
@@ -34,20 +28,7 @@ const NavBar =()=> {
                     )
                 })}
 
-                <li>
-                    <button
-                        className='navbar-category-item categories-drawer-button'
-                        onClick={handleCategoriesDrawerClick}
-                        >
-                            Categorias
-                    </button>
-                </li>
             </ul>
-            <CategoriesDrawer
-                categories={categories}
-                drawerVisible={drawerVisible}
-                setDrawerVisible={setDrawerVisible}
-            />
         </nav>
     )
 }

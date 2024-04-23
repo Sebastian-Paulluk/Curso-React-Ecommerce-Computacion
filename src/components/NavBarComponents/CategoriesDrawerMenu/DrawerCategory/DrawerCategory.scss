@@ -1,0 +1,61 @@
+@use '../../../../scss/variables';
+
+ul {
+    
+    .drawer-category  {
+        overflow: hidden;
+        margin-bottom: 5px;
+        margin-left: -40px;
+        margin-right: -25px;
+
+
+        .drawer-category-button {
+            font-family: variables.$font;
+            color: rgb(255, 255, 255);
+            width: 90%;
+            height: 40px;
+            text-align: left;
+            padding: 8px 20px 8px 45px;
+            cursor: pointer;
+            background-color: variables.$color4;
+            transition: 0.2s all ease;
+
+            &:hover {
+                background-color: variables.$color6;
+            }
+
+            &:active {
+                background-color: variables.$color8;
+            }
+        }
+
+        .open-category-button {
+            color:white;
+            font-family: variables.$font;
+            height: 40px;
+            width: 10%;
+            cursor: pointer;
+            background-color: variables.$color2;
+            transition: 0.2s all ease;
+
+
+            &:hover {
+                background-color: variables.$color6;
+            }
+
+            &:active {
+                background-color: variables.$color8;
+            }
+        }
+
+        .drawer-brands-list{
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.2s ease; 
+            
+            &.active {
+                max-height: 200px;
+            }
+        }
+    }
+}
