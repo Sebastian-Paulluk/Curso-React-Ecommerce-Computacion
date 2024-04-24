@@ -2,6 +2,7 @@ import { useContext, useState } from "react"
 import { Button } from 'antd';
 import React from 'react';
 import './ItemCount.scss'
+import Swal from 'sweetalert2'
 import { CartContext } from "../../../context/CartContext";
 
 const ItemCount =({product})=>{
@@ -21,6 +22,14 @@ const ItemCount =({product})=>{
         addProduct(product, quantity);
     }
 
+    const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+
+      });
+
     return (
         <div className="item-count">
             <div className="available-stock">Stock: {product.stock} unidades</div>
@@ -30,7 +39,18 @@ const ItemCount =({product})=>{
                 <Button type="default" className="increment-button" onClick={increment}>+</Button>
             </div>
             <div className="item-count__add-to-cart-button-container">
-                <Button type="primary" className="add-to-cart-button" onClick={()=> addToCart(product)}>Agregar al carrito</Button>
+                <Button type="primary" 
+                    className="add-to-cart-button"
+                    onClick={()=> {
+                        addToCart(product)
+                        Toast.fire({
+                            icon: "success",
+                            title: "Producto agregado al carrito"
+                          });
+                    }}
+                >
+                    Agregar al carrito
+                </Button>
             </div>
         </div>
     )

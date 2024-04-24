@@ -4,7 +4,19 @@ export const WishlistContext = createContext();
 
 export const WishlistProvider = ({children}) =>{
     const [wishlist, setWishlist] = useState([]);
+    const [wishlistInitialized, setWishlistInitialized] = useState(false);
 
+    useEffect(()=>{
+        const localWishlist = localStorage.getItem('wishlist');
+        localWishlist && setWishlist(JSON.parse(localWishlist));
+        setWishlistInitialized(true);
+    },[]);
+
+    useEffect(()=>{
+        wishlistInitialized && localStorage.setItem(
+            'wishlist', JSON.stringify(wishlist)
+        );
+    },[wishlist, wishlistInitialized]);
 
     
     const productInWishlist =(product)=>{
@@ -13,9 +25,13 @@ export const WishlistProvider = ({children}) =>{
     }
 
 
-
     const wishlistIsEmpty =()=> {
         return wishlist.length === 0;
+    }
+
+
+    const totalQuantityWishedItems =()=>{
+        return wishlist.length;
     }
 
 
@@ -24,13 +40,11 @@ export const WishlistProvider = ({children}) =>{
         
         const updatedWishlist = [...wishlist];
         updatedWishlist.splice(productIndex, 1);
-        setWishlist(updatedWishlist);
+        setWishlist(updatedWishlist)
     }
 
 
-
     const toggleProductOnWishlist =(product)=>{
-
         if (!productInWishlist(product)) {
             setWishlist([...wishlist, product])
         } else {
@@ -38,13 +52,13 @@ export const WishlistProvider = ({children}) =>{
         
             const updatedWishlist = [...wishlist];
             updatedWishlist.splice(productIndex, 1);
-            setWishlist(updatedWishlist);
+            setWishlist(updatedWishlist)
         }
-
     }
 
-
-
+    const emptyWishlist =()=>{
+        setWishlist([]);
+    }
 
     return (
         <WishlistContext.Provider value={{
@@ -52,7 +66,9 @@ export const WishlistProvider = ({children}) =>{
             productInWishlist,
             wishlistIsEmpty,
             removeProductFromWishlist,
-            toggleProductOnWishlist
+            toggleProductOnWishlist,
+            totalQuantityWishedItems,
+            emptyWishlist
         }}>
             {children}
         </WishlistContext.Provider>

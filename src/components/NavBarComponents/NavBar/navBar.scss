@@ -30,7 +30,6 @@ nav {
         height: 100%;
         font-family: variables.$font;
         border-radius: 0;
-        font-weight: 300;
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
         padding-inline: 15px;
@@ -39,7 +38,7 @@ nav {
         cursor: pointer;
         transition: background-color 0.2s ease;
         font-size: 14px;
-        
+        font-weight: 600;
         @media only screen and (max-width: 767px) {
             height: calc(variables.$header-height - 90px);
         }

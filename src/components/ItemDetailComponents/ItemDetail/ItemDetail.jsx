@@ -7,7 +7,6 @@ import { CartContext } from '../../../context/CartContext';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd';
 import { WishedItemButton } from '../WishedItemButton/WishedItemButton';
-import { WishlistContext } from '../../../context/WishlistContext';
 
 const ItemDetail =({product})=> {
     const [selectedImage, setSelectedImage] = useState(product.images[0]);

@@ -33,6 +33,7 @@ Ecommerce de artículos de computación, el cual se puede navegar por categorias
 
 - react-router-dom
 - ant-design
+- sweetalert2
 - sass
 - styled-components
 - react-hook-form

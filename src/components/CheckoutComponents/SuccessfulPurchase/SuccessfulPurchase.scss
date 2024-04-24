@@ -7,16 +7,40 @@
     flex-direction: column;
     padding-top: 100px;
 
+    @media only screen and (max-width: 767px) {
+        font-size: 16px;
+    }
+
+    @media only screen and (max-width: 430px) {
+        font-size: 14px;
+    }
+
     .first-line {
         font-size: 25px;
         font-weight: 400;
         margin-bottom: 5px;
+
+        @media only screen and (max-width: 767px) {
+            font-size: 20px;
+        }
+    
+        @media only screen and (max-width: 430px) {
+            font-size: 18px;
+        }
     }
 
     .second-line {
         font-size: 21px;
         font-weight: 400;
         margin-bottom: 25px;
+
+        @media only screen and (max-width: 767px) {
+            font-size: 20px;
+        }
+    
+        @media only screen and (max-width: 430px) {
+            font-size: 18px;
+        }
     }
 
     .return-to-home-button {

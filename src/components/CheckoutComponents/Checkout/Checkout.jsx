@@ -1,8 +1,18 @@
 import { Link } from "react-router-dom";
 import { CheckoutForm } from "../CheckoutForm/CheckoutForm"
 import './Checkout.scss';
+import { useContext, useEffect } from "react";
+import { CartContext } from "../../../context/CartContext";
+import { useNavigate } from 'react-router-dom';
 
 const Checkout =()=>{
+    const {isCartEmpty} = useContext(CartContext);
+    const navigate = useNavigate();
+
+    useEffect(()=>{
+        isCartEmpty() && navigate('/');
+    },[])
+
     return (
         <div className="check-out">
             <div className='check-out__title-container'>

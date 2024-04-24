@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Cart } from '../Cart/Cart';
 import './CartContainer.scss';
 import { CartContext } from '../../../context/CartContext';
@@ -9,6 +9,12 @@ import { Button } from 'antd';
 const CartContainer =()=>{
     const {isCartEmpty} = useContext(CartContext);
 
+    useEffect(()=>{
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth" 
+        });
+    },[])
     
     return (
         <div className={`cart-container`}>

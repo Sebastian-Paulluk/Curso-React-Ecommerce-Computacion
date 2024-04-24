@@ -1,12 +1,15 @@
 import { Button } from 'antd';
 import './SuccessfulPurchase.scss';
 import { Link } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { CartContext } from '../../../context/CartContext';
 
 const SuccessfulPurchase =({idOrder})=>{
     const {emptyCart} = useContext(CartContext);
-    emptyCart();
+    
+    useEffect(()=>{
+        emptyCart();
+    },[])
 
     return (
         <div className='successful-purchase-content'>

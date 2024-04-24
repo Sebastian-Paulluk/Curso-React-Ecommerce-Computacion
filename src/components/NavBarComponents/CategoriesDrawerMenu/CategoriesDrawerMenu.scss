@@ -1,3 +1,19 @@
-.categories-menu{
+@use '../../../scss/variables';
 
+.categories-menu {
+    .ant-drawer-header-title {
+        flex-direction: row-reverse;
+        margin-right: -18px;
+        
+        span {
+            color: white;
+            font-size: 20px;
+        }
+    
+        .ant-drawer-title{
+            font-family: variables.$font;
+            color: white;
+            font-size: larger;
+        }
+    }
 }

@@ -62,18 +62,31 @@
         align-items: center;
     }
 
-    .in-cart-icon{
+    .state-container {
         position: absolute;
-        color:black;
         top: 2px;
-        right: 2px;
+        right: 4px;
 
-        &.hidden {
-            display: none;
+        .in-cart-icon{
+            height: 18px;
+            &.hidden {
+                display: none;
+            }
+
+            img {
+                width: 18px;
+            }
         }
 
-        img {
-            width: 20px;
+        .in-wishlist-icon{
+            height: 18px;
+            &.hidden {
+                display: none;
+            }
+
+            img {
+                width: 16px;
+            }
         }
     }
 

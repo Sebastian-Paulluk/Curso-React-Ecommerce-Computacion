@@ -1,9 +1,25 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const CartContext = createContext();
 
 export const CartProvider = ({children}) =>{
     const [cart, setCart] = useState([]);
+    const [cartInitialized, setCartInitialized] = useState(false);
+
+    useEffect(()=>{
+        const localCart = localStorage.getItem('cart');
+        localCart && setCart(JSON.parse(localCart));
+        setCartInitialized(true);
+    },[]);
+
+    useEffect(()=>{
+        cartInitialized && localStorage.setItem(
+            'cart', JSON.stringify(cart)
+        );
+    },[cart, cartInitialized]);
+
+
+
 
     const isCartEmpty =()=> cart.length === 0;
 
@@ -45,26 +61,6 @@ export const CartProvider = ({children}) =>{
         return prodInCar.quantity;
     }
 
-    const incrementUnits =(product)=>{
-        const updatedCart = cart.map ( item =>{
-            if (item.id === product.id) {
-                return { ...item, quantity: item.quantity + 1}
-            }
-            return item;
-        })
-        setCart(updatedCart);
-    }
-
-    const decrementUnits =(product)=>{
-        const updatedCart = cart.map ( item =>{
-            if (item.id === product.id) {
-                return { ...item, quantity: item.quantity - 1}
-            }
-            return item;
-        })
-        setCart(updatedCart);
-    }
-
 
 
     const updateUnits =(product, newQuantity)=>{
@@ -95,8 +91,6 @@ export const CartProvider = ({children}) =>{
             productInCart,
             quantityOfUnitsInCart,
             totalQuantity,
-            incrementUnits,
-            decrementUnits,
             updateUnits
         }}>
             {children}

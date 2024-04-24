@@ -1,3 +1,4 @@
+@use '../../../scss/variables';
 
 .wishlist-widget {
     margin-left: 15px;
@@ -11,4 +12,57 @@
         }
     }
 }
+
+.wishlist {
+    .ant-drawer-header-title {
+        margin-right: -18px;
+        
+        .ant-drawer-close {
+            margin-right: 200px;
+
+        }
+
+        span {
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+        }
+    
+
+        .ant-drawer-title{
+            font-family: variables.$font;
+            color: rgb(0, 0, 0);
+            font-size: larger;
+        }
+    }
+
+    .no-wished-items {
+        font-family: variables.$font;
+    }
+
+    .clear-wishlist-button {
+        border: 1px solid transparent;
+        padding: 8px;
+        margin-top: 10px;
+        width: 131px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 6px;
+        margin-left: auto;
+        transition: all 0.2s ease;
+        font-family: variables.$font;
+        font-size: 13px;
+
+        img {
+            width: 17px;
+        }
+
+        &:hover {
+            box-shadow: 0px 0px 10px #B6B6B6;
+            border: 1px solid #ff1616;
+        }
+    }
+}
+
 

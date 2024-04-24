@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { NavBarCategory } from '../NavBarCategory/NavBarCategory';
 import { getCategories } from '../../../services/firebase';
 import { CategoriesDrawer } from '../CategoriesDrawerMenu/CategoriesDrawerMenu';
+import { orderByName } from '../../../functions/orderByName';
 
 const NavBar =()=> {
     const [categories, setCagories] = useState([]);
@@ -12,7 +13,10 @@ const NavBar =()=> {
 
     useEffect(()=>{
         getCategories()
-            .then(response => setCagories(response))
+            .then(response =>{
+                const orderedCategories = orderByName(response);
+                setCagories(orderedCategories)
+            })
     }, [])
 
     const handleCategoriesDrawerClick =()=>{
@@ -39,7 +43,7 @@ const NavBar =()=> {
                         className='navbar-category-item categories-drawer-button'
                         onClick={handleCategoriesDrawerClick}
                         >
-                            Categorias
+                            Categorías
                     </button>
                 </li>
             </ul>

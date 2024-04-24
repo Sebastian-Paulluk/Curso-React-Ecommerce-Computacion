@@ -6,19 +6,23 @@ ul {
         overflow: hidden;
         margin-bottom: 5px;
         margin-left: -40px;
-        margin-right: -25px;
+        margin-right: -24px;
 
 
-        .drawer-category-button {
+        .drawer-category-button {   
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             font-family: variables.$font;
             color: rgb(255, 255, 255);
-            width: 90%;
-            height: 40px;
+            width: 100%;
+            height: 45px;
             text-align: left;
-            padding: 8px 20px 8px 45px;
+            padding: 8px 8px 8px 45px;
             cursor: pointer;
-            background-color: variables.$color4;
+            background-color: #2867b4;
             transition: 0.2s all ease;
+            font-weight: 600;
 
             &:hover {
                 background-color: variables.$color6;
@@ -32,29 +36,41 @@ ul {
         .open-category-button {
             color:white;
             font-family: variables.$font;
-            height: 40px;
-            width: 10%;
+            height: 35px;
+            width: 35px;
             cursor: pointer;
-            background-color: variables.$color2;
             transition: 0.2s all ease;
+            border-radius: 50%;
+            background-color: variables.$color3;
 
+            img{
+                width: 10px;
+                transition: 0.2s all ease;
+            }
+
+            &.active {
+                img {
+                    transform: rotate(180deg);
+                }
+            }
 
             &:hover {
-                background-color: variables.$color6;
+                background-color: variables.$color5;
             }
 
-            &:active {
-                background-color: variables.$color8;
-            }
+
         }
 
         .drawer-brands-list{
+            border-top: 1px solid transparent;
             max-height: 0;
             overflow: hidden;
-            transition: all 0.2s ease; 
+            transition: all 0.2s ease;
             
             &.active {
+                border-color: variables.$borderColor;
                 max-height: 200px;
+                padding-bottom: 30px;
             }
         }
     }

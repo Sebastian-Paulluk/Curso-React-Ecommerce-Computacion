@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import './NavBarCategory.scss';
 import React from 'react';
 import { NavBarBrand } from "../NavBarBrand/NavBarBrand";
+import { orderByName } from "../../../functions/orderByName";
 
 const NavBarCategory =({category})=>{
 
@@ -12,7 +13,7 @@ const NavBarCategory =({category})=>{
             </NavLink>
 
             <ul className="brands-list">
-                {category.brands.map((brand,key) =>(
+                {category.brands.sort().map((brand,key) =>(
                     <NavBarBrand key={key} category={category} brand={brand} />
                 ))}
             </ul>

@@ -21,6 +21,7 @@ transition: all 0.2s ease;
 
 &:hover {
     box-shadow: 0px 0px 10px #B6B6B6;
+    border-color: #1677ff;
 }
 `;
 

@@ -1,26 +1,35 @@
 import { Drawer } from "antd"
 import { DrawerCategory } from "./DrawerCategory/DrawerCategory";
 import './CategoriesDrawerMenu.scss';
+import { useState } from "react";
 
 const CategoriesDrawer =({categories, drawerVisible, setDrawerVisible}) =>{
+    const [activeCategory, setActiveCategory] = useState(null);
 
     const onClose = () => {
-        setDrawerVisible(false);
+        setDrawerVisible(false)
+        setActiveCategory(null)
     };
 
     return (
         <Drawer
-                title="Categorias"
+                title="Categorías"
                 onClose={onClose}
                 open={drawerVisible}
                 className='categories-menu'
                 placement='left'
-                style={{color: 'black'}}
+                style={{backgroundColor:'#154988'}}
             >
                 {categories ?
                     <>
                         {categories.map((category, index)=>(
-                            <DrawerCategory key={index} category={category} onClose={onClose}/>
+                            <DrawerCategory 
+                                key={index} 
+                                category={category} 
+                                onClose={onClose}
+                                setActiveCategory={setActiveCategory}
+                                activeCategory={activeCategory}
+                            />
                         ))}
                     </>
                     :

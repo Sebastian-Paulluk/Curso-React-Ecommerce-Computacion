@@ -3,14 +3,14 @@
 .drawer-brand-item{
     width: 100%;
     text-align: left;
-    padding: 10px 20px 10px 60px;
-    border-bottom: 1px solid variables.$borderColor;
+    padding: 10px 20px 10px 70px;
     font-family: variables.$font;
     cursor: pointer;
-    background-color: rgb(230, 230, 230);
+    background-color: variables.$color4;
     transition: all 0.2s ease;
+    color: white;
 
     &:hover{
-        background-color: white;
+        background-color: variables.$color6;
     }
 }

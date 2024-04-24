@@ -1,37 +1,53 @@
-import { NavLink } from "react-router-dom"
 import './DrawerCategory.scss';
 import { DrawerBrand } from "../DrawerBrand/DrawerBrand";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import arrow from '../../../../assets/images/arrow-down.png';
+import { useNavigate } from 'react-router-dom';
 
-const DrawerCategory =({category, onClose})=>{
+const DrawerCategory =({category, onClose, setActiveCategory, activeCategory}) => {
     const [categoryOpened, setCategoryOpened] = useState(false)
+    const navigate = useNavigate();
 
     const toggleCategoryState =()=>{
         setCategoryOpened(!categoryOpened);
+        setActiveCategory(category)
     }
 
     const handleCategoryClick = () => {
         onClose(); 
-        setCategoryOpened(!categoryOpened);
+        navigate(`category/${category.name}`);
+        setActiveCategory(null)
     };
+
+    useEffect(()=>{
+        setCategoryOpened(activeCategory === category)
+    },[activeCategory]) 
 
     return (
             <ul>
                 <li className="drawer-category">
-                    <NavLink to={`category/${category.name}`}>
-                        <button className="drawer-category-button" onClick={handleCategoryClick}>{category.name}</button>
-                    </NavLink>
-                    
-                    <button 
-                        className='open-category-button'
-                        onClick={toggleCategoryState}>
-                            V
-                    </button>
 
-                    <ul className={`drawer-brands-list ${categoryOpened ? 'active' : ''}`}>
+                        <div className="drawer-category-button" onClick={handleCategoryClick}>{category.name}
+                                <button 
+                                    className={`open-category-button ${categoryOpened ? 'active' : ''}`} 
+                                    onClick={(e)=>{
+                                        e.stopPropagation();
+                                        toggleCategoryState();
+                                    }}    
+                                >
+                                        <img src={arrow} alt="arrow-icon"></img>
+                                </button>
+                        </div>
+
+                    <ul className={`drawer-brands-list ${activeCategory === category && categoryOpened ? 'active' : ''}`}>
                         {category.brands.map((brand,key) =>(
-                            <DrawerBrand key={key} category={category} brand={brand} onClose={onClose}/>
+                            <DrawerBrand
+                                key={key}
+                                category={category} 
+                                brand={brand}
+                                onClose={onClose}
+                                setActiveCategory={setActiveCategory}
+                            />
                         ))}
                     </ul>
                 </li>
