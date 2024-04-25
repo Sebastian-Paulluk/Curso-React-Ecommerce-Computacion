@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom";
 import './NavBarCategory.scss';
 import React from 'react';
 import { NavBarBrand } from "../NavBarBrand/NavBarBrand";
-import { orderByName } from "../../../functions/orderByName";
 
 const NavBarCategory =({category})=>{
 

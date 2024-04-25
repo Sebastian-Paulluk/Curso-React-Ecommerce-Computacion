@@ -38,7 +38,7 @@ Correr la app
 ```
 
 
-## Imágenes
+## Screenshots
 
 
 > Home:

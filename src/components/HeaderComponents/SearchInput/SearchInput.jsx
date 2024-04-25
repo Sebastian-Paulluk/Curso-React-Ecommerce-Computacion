@@ -1,6 +1,6 @@
 import './SearchInput.scss';
 import searchIcon from '../../../assets/images/search.png';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const SearchInput =()=>{

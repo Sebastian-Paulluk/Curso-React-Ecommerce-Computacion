@@ -1,5 +1,4 @@
-import { Button } from 'antd';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import { CartContext } from '../../../../context/CartContext';
 import './CartItemCount.scss';
 import { getSelectItems } from './getSelectItems';

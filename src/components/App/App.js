@@ -8,7 +8,7 @@ import { CartProvider } from "../../context/CartContext";
 import { CartContainer } from "../CartComponents/CartContainer/CartContainer";
 import { Checkout } from "../CheckoutComponents/Checkout/Checkout";
 import { PathProvider } from "../../context/PathContext";
-import { ConfigProvider, FloatButton, Spin } from 'antd';
+import { ConfigProvider, FloatButton } from 'antd';
 import { WishlistProvider } from "../../context/WishlistContext";
 
 function App() {

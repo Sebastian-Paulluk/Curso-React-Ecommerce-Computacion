@@ -1,7 +1,6 @@
 import { useMountingAnimation } from '../../Hooks/useMountingAnimation';
 import './CartItem.scss';
 import { OptionsButton } from './OptionsButton/OptionsButton';
-import { CartContext } from '../../../context/CartContext';
 import { CartItemCount } from './CartItemCount/CartItemCount';
 
 const CartItem =({product, mountingDelay})=>{

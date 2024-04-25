@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import { useMountingAnimation } from '../../Hooks/useMountingAnimation';
 import { ImageList } from '../ImageList/ImageList';
 import { ItemCount } from '../ItemCount/ItemCount';
@@ -52,7 +52,7 @@ const ItemDetail =({product})=> {
                                     <Button type="primary" style={{width:150}} className='button'>Seguir comprando</Button>
                                 </Link>
                             </>
-                        
+                    
                         ) : (
                             <ItemCount product={product}/>
                         )
