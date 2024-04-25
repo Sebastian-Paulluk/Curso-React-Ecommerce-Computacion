@@ -34,7 +34,7 @@ const CartContainer =()=>{
                                 className="return-to-home-button"
                                 style={{width:150, height:40, fontSize:16}}
                             >
-                                Ir al inicio
+                                Ver productos
                             </Button>
                         </Link>
                     </div>

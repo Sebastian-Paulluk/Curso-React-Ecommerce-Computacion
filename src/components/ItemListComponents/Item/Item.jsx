@@ -11,7 +11,7 @@ const Item =({product, mountingDelay})=> {
     const visibility = useMountingAnimation(mountingDelay);
     const {productInCart} = useContext(CartContext);
     const {productInWishlist} = useContext(WishlistContext);
-    const {id, title, images, price} = product;
+    const {id, title, images, price, stock} = product;
 
     return (
         <Link to={`/item/${id}`} className='Option'>
@@ -21,6 +21,9 @@ const Item =({product, mountingDelay})=> {
                 </div>
                 <div className='item__title'>{title}</div>
                 <div className='item__price'>$ {price.toLocaleString()}</div>
+                <div className={`no-stock-icon-container ${stock != 0 ? 'hidden' : ''}`}>
+                    <span>SIN STOCK</span>
+                </div>
                 <div className='state-container'>
                     <div
                         className={`in-cart-icon ${productInCart(product) ? '' : 'hidden'}`}

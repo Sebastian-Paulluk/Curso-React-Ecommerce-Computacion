@@ -9,7 +9,7 @@ Ecommerce de artículos de computación, el cual se puede navegar por categorias
 
 > Home:
 
-![](https://i.ibb.co/N9DTRC8/home.png)
+![](https://i.ibb.co/5FfZRTH/home.png)
 
 > Detalle de producto:
 
@@ -17,11 +17,11 @@ Ecommerce de artículos de computación, el cual se puede navegar por categorias
 
 > Lista de favoritos:
 
-![](https://i.ibb.co/VY9pQNX/wishList.png)
+![](https://i.ibb.co/zZCVDr8/wishList.png)
 
 > Carrito:
 
-![](https://i.ibb.co/dJ9r4hn/Cart.png)
+![](https://i.ibb.co/xD5WP3y/Cart.png)
 
 >Checkout:
 
