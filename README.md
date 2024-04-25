@@ -1,6 +1,6 @@
 ![](https://i.ibb.co/7NchXsf/logo-wall.png)
 
-# Curso React JS Proyecto Final - Computación Express
+# Curso React JS Proyecto Final - Express Computación
 
 Ecommerce de artículos de computación, el cual se puede navegar por categorias y marcas. También cuenta con un buscador, sección de favoritos, carrito y checkout.
 
