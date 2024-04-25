@@ -2,7 +2,7 @@
 
 # Curso React JS Proyecto Final - Express Computación
 
-Ecommerce de artículos de computación, el cual se puede navegar por categorias y marcas. También cuenta con un buscador, sección de favoritos, carrito y checkout.
+Ecommerce de artículos de computación realizado como entrega final para el curso de React JS de Coderhouse. La app se puede navegar por categorias y marcas, y también cuenta con un buscador, sección de favoritos, carrito y checkout.
 
 ## Deploy en Vercel
 
