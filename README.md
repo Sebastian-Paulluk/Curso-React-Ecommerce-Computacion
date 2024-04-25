@@ -4,6 +4,10 @@
 
 Ecommerce de artículos de computación, el cual se puede navegar por categorias y marcas. También cuenta con un buscador, sección de favoritos, carrito y checkout.
 
+## Deploy
+
+[Links](https://computacion-express-react-js.vercel.app/)
+
 ## Dependencias
 
 - react-router-dom
