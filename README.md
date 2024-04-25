@@ -4,9 +4,9 @@
 
 Ecommerce de artículos de computación, el cual se puede navegar por categorias y marcas. También cuenta con un buscador, sección de favoritos, carrito y checkout.
 
-## Deploy
+## Deploy en Vercel
 
-[Links](https://computacion-express-react-js.vercel.app/)
+`<link>` : <https://computacion-express-react-js.vercel.app/>
 
 ## Dependencias
 
