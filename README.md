@@ -1,4 +1,4 @@
-![](https://i.ibb.co/WcDYLwt/logo-wall.png)
+![](https://i.ibb.co/7NchXsf/logo-wall.png)
 
 # Curso React JS Proyecto Final - Computación Express
 
