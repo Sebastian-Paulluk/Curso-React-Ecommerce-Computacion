@@ -42,7 +42,7 @@ Express Computación is an E-commerce for computer products made as a final deli
 
 
 
-# Content
+## Content
 - <a href="#creado-con"> 🛠️ Built with</a>
 - <a href="#despliegue"> 🚀 Deployment</a>
 - <a href="#instalacion"> 📥 Installation</a>
