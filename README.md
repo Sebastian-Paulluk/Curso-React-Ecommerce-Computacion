@@ -108,7 +108,7 @@ Express Computación is an E-commerce for computer products made as a final deli
 
 
 
-<a id="images"></a>
+<a id="imagenes"></a>
 # Images
 
 <br>
@@ -164,7 +164,7 @@ Express Computación is an E-commerce for computer products made as a final deli
 <br>
 <br>
 
-<a id="profiles-and-contact"></a>
+<a id="pefiles-y-contacto"></a>
 ## Profiles and Contact
 
 ### Sebastián Jonatan Paulluk
