@@ -7,7 +7,7 @@
 <br>
 
 <div align="right">
-    <a href=""><img src="https://img.shields.io/badge/lang-english-blue.svg" alt="eng"></a> &nbsp; <a href=""><img src="https://img.shields.io/badge/lang-español-red.svg" height="27" alt="es"></a>
+    <a href=""><img src="https://img.shields.io/badge/lang-english-blue.svg" alt="eng"></a> &nbsp; <a href="https://github.com/Sebastian-Paulluk/Curso-React-Ecommerce-Computacion/blob/main/README.es.md"><img src="https://img.shields.io/badge/lang-español-red.svg" height="27" alt="es"></a>
 </div>
 
 <details>
@@ -43,9 +43,17 @@ Ecommerce de artículos de computación realizado como entrega final para el cur
 
 
 
+<br>
+
+
+
 <a id="despliegue"></a>
 ## Despliegue:
 ### <https://computacion-express-react-js.vercel.app/>
+
+
+
+<br>
 
 
 
@@ -68,6 +76,8 @@ Ecommerce de artículos de computación realizado como entrega final para el cur
    ```sh
    npm run start
    ```
+
+
 
 <br><br>
 
@@ -125,11 +135,12 @@ Ecommerce de artículos de computación realizado como entrega final para el cur
   <img src="https://i.ibb.co/c1RxK6d/Checkout.png">
 </kbd>
 
+
+
+
 <br>
 <br>
-
-###
-
+<br>
 
 
 <a id="pefiles-y-contacto"></a>
@@ -145,6 +156,7 @@ Ecommerce de artículos de computación realizado como entrega final para el cur
 [![Gmail][Gmail-icon]][Gmail-url] &nbsp; &nbsp; sebastianpaulluk@gmail.com
 
 <p align="right"><a href="#top">Volver al inicio</a></p>
+
 
 
 
