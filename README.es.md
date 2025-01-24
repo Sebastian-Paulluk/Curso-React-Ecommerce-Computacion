@@ -9,8 +9,6 @@
 </table>
 
 
-<br>
-
 
 <table align="right">
     <tr>
@@ -29,20 +27,6 @@
 
 
 
-<details>
-  <summary>Tabla de contenido</summary>
-  <ol>
-    <li><a href="#creado-con">Creado con</a></li>
-    <li><a href="#despliegue">Despliegue</a></li>
-    <li><a href="#instalacion">Instalación</a></li>
-    <li><a href="#imagenes">Imágenes</a></li>
-    <li><a href="#pefiles-y-contacto">Perfiles y contacto</a></li>
-  </ol>
-</details>
-
-
-
-<br>
 <br>
 
 
@@ -50,6 +34,19 @@
 # Express Computación
 
 Ecommerce de artículos de computación realizado como entrega final para el curso de React JS de Coderhouse. La app se puede navegar por categorias y marcas, y también cuenta con un buscador, sección de favoritos, carrito y checkout.
+
+
+
+<br>
+
+
+
+## Contenido
+- <a href="#creado-con"> 🛠️ Creado con </a>
+- <a href="#despliegue"> 🚀 Despliegue </a>
+- <a href="#instalacion"> 📥 Instalación </a>
+- <a href="#imagenes"> 🖼️ Imágenes </a>
+- <a href="#pefiles-y-contacto"> 👤 Perfiles y contacto </a>
 
 
 
