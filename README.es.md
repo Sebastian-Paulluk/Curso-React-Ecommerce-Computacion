@@ -18,7 +18,7 @@
     </tr>
   <tr>
     <td align="right">
-      <a href=""><img src="https://img.shields.io/badge/english-blue.svg" alt="eng"></a>
+      <a href="https://github.com/Sebastian-Paulluk/Curso-React-Ecommerce-Computacion/blob/main/README.md"><img src="https://img.shields.io/badge/english-blue.svg" alt="eng"></a>
       &nbsp;
       <a href="https://github.com/Sebastian-Paulluk/Curso-React-Ecommerce-Computacion/blob/main/README.es.md"><img src="https://img.shields.io/badge/español-red.svg" height="25" alt="es"></a>
     </td>
