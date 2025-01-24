@@ -1,14 +1,33 @@
 <a id="top"></a>
 
-<div align="center">
-  <img  src="https://i.ibb.co/7NchXsf/logo-wall.png">
-</div>
+<table align="center"> 
+    <tr>
+      <td>
+        <img  src="https://i.ibb.co/7NchXsf/logo-wall.png">
+    </td>
+  </tr>
+</table>
+
 
 <br>
 
-<div align="right">
-    <a href=""><img src="https://img.shields.io/badge/lang-english-blue.svg" alt="eng"></a> &nbsp; <a href="https://github.com/Sebastian-Paulluk/Curso-React-Ecommerce-Computacion/blob/main/README.es.md"><img src="https://img.shields.io/badge/lang-español-red.svg" height="27" alt="es"></a>
-</div>
+
+<table align="right">
+    <tr>
+      <td align="center">
+        Idiomas
+      </td>
+    </tr>
+  <tr>
+    <td align="right">
+      <a href=""><img src="https://img.shields.io/badge/english-blue.svg" alt="eng"></a>
+      &nbsp;
+      <a href="https://github.com/Sebastian-Paulluk/Curso-React-Ecommerce-Computacion/blob/main/README.es.md"><img src="https://img.shields.io/badge/español-red.svg" height="25" alt="es"></a>
+    </td>
+  </tr>
+</table>
+
+
 
 <details>
   <summary>Tabla de contenido</summary>
@@ -21,9 +40,18 @@
   </ol>
 </details>
 
+
+
+<br>
+<br>
+
+
+
 # Express Computación
 
 Ecommerce de artículos de computación realizado como entrega final para el curso de React JS de Coderhouse. La app se puede navegar por categorias y marcas, y también cuenta con un buscador, sección de favoritos, carrito y checkout.
+
+
 
 <br>
 
